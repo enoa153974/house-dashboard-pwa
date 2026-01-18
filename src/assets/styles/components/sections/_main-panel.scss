@@ -1,0 +1,74 @@
+.main-panel {
+    
+    .clock {
+        font-size: 10rem;
+    }
+
+    .date {
+        font-size: 5rem;
+    }
+
+
+    /* 天気パネル */
+    .weather-panel__inner {
+        font-size: var(--font-size-3xl);
+    }
+
+    .weather-panel button {
+        margin-left: auto;
+        border: none;
+        background: #333;
+        color: #fff;
+    }
+
+    .weather-refresh__btn {
+        background: #888;
+        color: #fff;
+        border: none;
+        padding: 0.5rem 1.5rem;
+        font-size: var(--font-size-xl);
+        box-shadow: 0 .1rem .2rem rgba(0, 0, 0, .25);
+    }
+
+    .weather-refresh__btn:active {
+        transform: translateY(1px);
+        box-shadow: 0 .05rem .1rem rgba(0, 0, 0, .2);
+    }
+
+
+    .home-info {
+        border: solid var(--sub-color);
+    }
+
+    /* ゴミの日パネル */
+    .garbage {
+        box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .05);
+        background: linear-gradient(90deg,
+                #eaf7f3 0%,
+                #fdfefe 100%);
+        border-bottom: solid var(--sub-color);
+    }
+
+    .garbage__comment {
+        font-size: var(--font-size-2xl);
+    }
+
+    .memo__save,
+    .memo__clear {
+        background: #e6f4ea;
+        color: var(--sub-main);
+        font-size: var(--font-size-xl);
+    }
+
+    /* 伝言パネル */
+
+    .memo__preview-label {
+        font-size: var(--font-size-xl);
+    }
+
+    .memo__preview .memo__display {
+        font-size: var(--font-size-3xl);
+        line-height: 1.6;
+        font-weight: var(--font-weight-bold);
+    }
+}
