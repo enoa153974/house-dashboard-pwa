@@ -20,6 +20,12 @@ import { initExtraTasks } from './extraTasks.js';
 //import './panel.js';
 //import { hamburger } from './hamburger.js';
 
+/* Service Worker を登録 */
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js');
+    });
+}
 window.addEventListener('DOMContentLoaded', () => {
     // HTML読み込みが終わったあとに実行される処理
     //hamburger();
