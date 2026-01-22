@@ -15,7 +15,7 @@ export default defineConfig({
     ],
 
     build: {
-        outDir: '/dist',      // ルート直下にdist
+        outDir: 'dist',    
         emptyOutDir: true,
         assetsDir: 'assets',    // アセットの格納ディレクトリ
         minify: false,          // minifyを無効化
