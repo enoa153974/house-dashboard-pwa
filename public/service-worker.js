@@ -1,12 +1,11 @@
 self.addEventListener('install', () => {
-    console.log('Service Worker installed');
     self.skipWaiting();
 });
 
 self.addEventListener('activate', () => {
-    console.log('Service Worker activated');
+    self.clients.claim();
 });
 
-self.addEventListener('fetch', () => {
-    // 今は何もしない（後でキャッシュ対応する）
+self.addEventListener('fetch', (event) => {
+    // 今は何もしない
 });
