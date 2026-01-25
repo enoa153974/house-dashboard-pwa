@@ -1,17 +1,27 @@
+@use '../../foundation/import.scss' as *;
+
 .main-panel {
-    
+    @include media-query(lg){
+        .l-row{
+            flex-direction: column;
+        }
+        .l-column--8,
+        .l-column--4{
+            width: 100%;
+        }
+    }
     .clock {
-        font-size: 10rem;
+        font-size:clamp(3rem, 1.421rem + 8.42vw, 9rem);
     }
 
     .date {
-        font-size: 5rem;
+        font-size:var(--font-size-3xl);
     }
 
 
     /* 天気パネル */
     .weather-panel__inner {
-        font-size: var(--font-size-3xl);
+        font-size: var(--font-size-xl);
     }
 
     .weather-panel button {
