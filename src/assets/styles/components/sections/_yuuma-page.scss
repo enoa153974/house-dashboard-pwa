@@ -27,7 +27,7 @@
 
         .page-subtitle {
             margin-top: .25rem;
-            font-size:var(--font-size-lg);
+            font-size: var(--font-size-lg);
         }
 
         .btn--back {
@@ -158,6 +158,16 @@
         transform: scale(1);
     }
 
+    .task {
+        touch-action: none;
+        user-select: none;
+        cursor: grab;
+    }
+
+    .task.is-dragging {
+        cursor: grabbing;
+        opacity: .6;
+    }
 
     /* 追加やること：全リセット */
     .btn--reset {
