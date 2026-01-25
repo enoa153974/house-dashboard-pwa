@@ -148,7 +148,7 @@ export function initYuumaSchedule() {
         <span class="task__icon">${task.icon}</span>
         <span class="task__label">${task.label}</span>
         <span class="task__result hanamaru">
-            <img src="../assets/svg/flower-3.svg" alt="はなまる" />
+            <img src="/svg/flower-3.svg" alt="はなまる" />
         </span>
 `;
 
