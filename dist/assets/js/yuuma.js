@@ -1,0 +1,218 @@
+import "./style.js";
+function initYuumaSchedule() {
+  const todayLabelEl = document.getElementById("today-label");
+  const scheduleListEl = document.getElementById("schedule-list");
+  const belongingsListEl = document.getElementById("belongings-list");
+  const taskListEl = document.getElementById("task-list");
+  if (!todayLabelEl || !scheduleListEl || !belongingsListEl || !taskListEl) {
+    return;
+  }
+  const WEEK_LABELS = ["にちようび", "げつようび", "かようび", "すいようび", "もくようび", "きんようび", "どようび"];
+  const WEEK_KEYS = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"];
+  const today = /* @__PURE__ */ new Date();
+  const dayIndex = today.getDay();
+  const todayKey = WEEK_KEYS[dayIndex];
+  todayLabelEl.textContent = `きょうは ${WEEK_LABELS[dayIndex]}`;
+  const WEEKLY_DATA = {
+    mon: {
+      schedule: ["🏫 がっこう"],
+      belongings: ["👕体そう服", "👟上ぐつ", "👚エプロン", "🥤 すいとう", "🖊 ふでばこ", "📝 連絡袋"],
+      tasks: [
+        { id: "bag", icon: "🎒", label: "ランドセルを部屋におく" },
+        { id: "wash", icon: "🧼", label: "すいとうをだす" },
+        { id: "homework", icon: "📒", label: "しゅくだい" },
+        { id: "play", icon: "🎮", label: "あそんでいいよ" }
+      ]
+    },
+    tue: {
+      schedule: ["🏫 がっこう", "🏠チャイルドハート"],
+      belongings: ["🥤 すいとう", "🖊 ふでばこ", "📝 連絡袋"],
+      tasks: [
+        { id: "bag", icon: "🎒", label: "ランドセルを部屋におく" },
+        { id: "wash", icon: "🧼", label: "すいとうをだす" },
+        { id: "homework", icon: "📒", label: "しゅくだい" },
+        { id: "play", icon: "🎮", label: "あそんでいいよ" }
+      ]
+    },
+    wed: {
+      schedule: ["🏫 がっこう"],
+      belongings: ["🥤 すいとう", "🖊 ふでばこ", "📝 連絡袋"],
+      tasks: [
+        { id: "bag", icon: "🎒", label: "ランドセルを部屋におく" },
+        { id: "wash", icon: "🧼", label: "すいとうをだす" },
+        { id: "homework", icon: "📒", label: "しゅくだい" },
+        { id: "play", icon: "🎮", label: "あそんでいいよ" }
+      ]
+    },
+    thu: {
+      schedule: ["🏫 がっこう"],
+      belongings: ["🥤 すいとう", "🖊 ふでばこ", "📝 連絡袋"],
+      tasks: [
+        { id: "bag", icon: "🎒", label: "ランドセルを部屋におく" },
+        { id: "wash", icon: "🧼", label: "すいとうをだす" },
+        { id: "homework", icon: "📒", label: "しゅくだい" },
+        { id: "play", icon: "🎮", label: "あそんでいいよ" }
+      ]
+    },
+    fri: {
+      schedule: ["🏫 がっこう", "🏠チャイルドハート"],
+      belongings: ["🥤 すいとう", "🖊 ふでばこ", "📝 連絡袋"],
+      tasks: [
+        { id: "bag", icon: "🎒", label: "ランドセルを部屋におく" },
+        { id: "wash", icon: "🧼", label: "すいとうをだす" },
+        { id: "wash", icon: "🧼", label: "体そう服を洗たくものにだす" },
+        { id: "wash", icon: "🧼", label: "エプロンを洗たくものにだす" },
+        { id: "wash", icon: "🧼", label: "上ぐつを洗たくものにだす" },
+        { id: "homework", icon: "📒", label: "しゅくだい" },
+        { id: "play", icon: "🎮", label: "あそんでいいよ" }
+      ]
+    },
+    sat: {
+      schedule: ["🏠チャイルドハート"],
+      belongings: ["🥤 すいとう", "🍱お弁当", "👜お着換え袋"],
+      tasks: [
+        { id: "bag", icon: "🎒", label: "リュックを部屋におく" },
+        { id: "wash", icon: "🧼", label: "🍱お弁当をだす" },
+        { id: "wash", icon: "🧼", label: "すいとうをだす" },
+        { id: "homework", icon: "📒", label: "しゅくだい（まだなら）" },
+        { id: "wash", icon: "🧼", label: "上ぐつを洗う" },
+        { id: "play", icon: "🎮", label: "あそんでいいよ" }
+      ]
+    },
+    sun: {
+      schedule: ["🏠 おやすみの日"],
+      belongings: [],
+      tasks: [
+        { id: "rest", icon: "🌤", label: "ゆっくりすごす" },
+        { id: "play", icon: "🎮", label: "あそんでいいよ" }
+      ]
+    }
+  };
+  const todayData = WEEKLY_DATA[todayKey];
+  if (!todayData) return;
+  scheduleListEl.innerHTML = "";
+  todayData.schedule.forEach((item) => {
+    const li = document.createElement("li");
+    li.textContent = item;
+    scheduleListEl.appendChild(li);
+  });
+  belongingsListEl.innerHTML = "";
+  todayData.belongings.forEach((item) => {
+    const li = document.createElement("li");
+    li.textContent = item;
+    belongingsListEl.appendChild(li);
+  });
+  taskListEl.innerHTML = "";
+  todayData.tasks.forEach((task) => {
+    const li = document.createElement("li");
+    li.className = "task";
+    li.dataset.taskId = task.id;
+    li.innerHTML = `
+        <span class="task__icon">${task.icon}</span>
+        <span class="task__label">${task.label}</span>
+        <span class="task__result hanamaru">
+            <img src="../assets/svg/flower-3.svg" alt="はなまる" />
+        </span>
+`;
+    taskListEl.appendChild(li);
+  });
+  const STATUS_KEY = "yuuma-task-status";
+  const DATE_KEY2 = "yuuma-task-date";
+  function resetIfNewDay() {
+    const today2 = (/* @__PURE__ */ new Date()).toDateString();
+    const savedDate = localStorage.getItem(DATE_KEY2);
+    if (savedDate !== today2) {
+      localStorage.removeItem(STATUS_KEY);
+      localStorage.setItem(DATE_KEY2, today2);
+    }
+  }
+  function loadStatus() {
+    return JSON.parse(localStorage.getItem(STATUS_KEY)) || {};
+  }
+  function saveStatus(status) {
+    localStorage.setItem(STATUS_KEY, JSON.stringify(status));
+  }
+  resetIfNewDay();
+  let taskStatus = loadStatus();
+  document.querySelectorAll(".task").forEach((taskEl) => {
+    const taskId = taskEl.dataset.taskId;
+    if (taskStatus[taskId]) {
+      taskEl.classList.add("is-done");
+    }
+    taskEl.addEventListener("click", () => {
+      taskEl.classList.toggle("is-done");
+      taskStatus[taskId] = taskEl.classList.contains("is-done");
+      saveStatus(taskStatus);
+    });
+  });
+}
+const EXTRA_TASKS_KEY = "yuuma-extra-tasks";
+const DATE_KEY = "yuuma-task-date";
+function initExtraTasks() {
+  const listEl = document.getElementById("extra-task-list");
+  const formEl = document.getElementById("extra-task-form");
+  const inputEl = document.getElementById("extra-task-input");
+  const resetBtn = document.getElementById("extra-task-reset");
+  if (!listEl || !formEl || !inputEl) return;
+  resetIfNewDayExtra();
+  let extraTasks = loadExtraTasks();
+  renderExtraTasks(extraTasks);
+  formEl.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const text = inputEl.value.trim();
+    if (!text) return;
+    extraTasks.push({
+      id: `extra-${Date.now()}`,
+      label: text,
+      done: false
+    });
+    saveExtraTasks(extraTasks);
+    renderExtraTasks(extraTasks);
+    inputEl.value = "";
+  });
+  resetBtn?.addEventListener("click", () => {
+    extraTasks = [];
+    saveExtraTasks(extraTasks);
+    renderExtraTasks(extraTasks);
+  });
+  function renderExtraTasks(tasks) {
+    listEl.innerHTML = "";
+    tasks.forEach((task) => {
+      const li = document.createElement("li");
+      li.className = "task";
+      li.dataset.taskId = task.id;
+      if (task.done) li.classList.add("is-done");
+      li.innerHTML = `
+        <span class="task__label">${task.label}</span>
+        <span class="task__result hanamaru">
+        <img src="../assets/svg/flower-3.svg" alt="はなまる" />
+        </span>
+        `;
+      li.addEventListener("click", () => {
+        task.done = !task.done;
+        saveExtraTasks(tasks);
+        renderExtraTasks(tasks);
+      });
+      listEl.appendChild(li);
+    });
+  }
+  function loadExtraTasks() {
+    return JSON.parse(localStorage.getItem(EXTRA_TASKS_KEY)) || [];
+  }
+  function saveExtraTasks(tasks) {
+    localStorage.setItem(EXTRA_TASKS_KEY, JSON.stringify(tasks));
+  }
+  function resetIfNewDayExtra() {
+    const today = (/* @__PURE__ */ new Date()).toDateString();
+    const savedDate = localStorage.getItem(DATE_KEY);
+    if (savedDate !== today) {
+      localStorage.removeItem(EXTRA_TASKS_KEY);
+      localStorage.setItem(DATE_KEY, today);
+    }
+  }
+}
+window.addEventListener("DOMContentLoaded", () => {
+  console.log("yuuma.js loaded");
+  initYuumaSchedule();
+  initExtraTasks();
+});

@@ -3,7 +3,7 @@
  * 
  * jsファイルのエントリーポイント
  * - Sass/CSSや必要なJSをここでまとめて読み込む
- * - ページ全体で使う処理をここに書く
+ * - メインページ全体で使う処理をここに書く
  * - DOMContentLoaded
  * - 初期化処理の呼び出し
  */
@@ -14,8 +14,8 @@ import { initWeather } from './weather.js';
 import { initGarbage } from './garbage.js';
 import { initMemo } from './memo.js';
 import { initNav } from './nav.js';
-import { initYuumaSchedule } from './yuumaSchedule.js';
-import { initExtraTasks } from './extraTasks.js';
+
+
 //import './switchPanel.js';
 //import './panel.js';
 //import { hamburger } from './hamburger.js';
@@ -35,7 +35,4 @@ window.addEventListener('DOMContentLoaded', () => {
     initGarbage();
     initMemo();
     initNav();
-    initYuumaSchedule();
-    initExtraTasks();
-    console.log('jsファイルの読み込みが完了しました！');
 });

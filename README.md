@@ -1,10 +1,13 @@
 # House Dashboard PWA
 
-家に余っている Android タブレットを **横置きスマートディスプレイ**として活用するための  
+家に余っている **Android タブレットを横置きのスマートディスプレイ**として活用するための、  
 **家族用ダッシュボード PWA**。
 
 時計・天気・家族ページ・おうち情報などを常設表示し、  
-「見るだけで今の状況が分かる」ことを重視した設計。
+**「見るだけで今の状況が分かる」**ことを最優先に設計している。
+
+本プロジェクトは、  
+**最終的に「素の HTML / CSS / JavaScript」として納品可能な構成**を前提としている。
 
 ---
 
@@ -12,9 +15,9 @@
 
 - 家族専用・据え置き利用前提
 - 横置き Android タブレット特化
-- 操作より **視認性・即時性**を優先
-- 機能は増やしすぎず、必要なものだけ
-- 将来の拡張（Firestore / PWA強化）を見据えた構成
+- 操作性より **視認性・即時性** を優先
+- 機能は増やしすぎず、必要最小限に
+- 将来の拡張（PWA強化 / Firestore導入）を見据えた設計
 
 ---
 
@@ -26,43 +29,81 @@
 
 - 大きめデジタル時計（最優先）
 - 今日の天気
-- 各人ページへのボタン（ゆうま / あしゃ / そーくん）
+- 各人ページへのボタン  
+  - ゆうま  
+  - あしゃ  
+  - そーくん
 - ちゃっぴー起動ボタン（ChatGPT へワンクリック）
 - おうちの情報
-  - ゴミの日の情報
-  - 家族へのメモ（ホワイトボード的・一時的）
+  - ゴミの日
+  - 家族への一時メモ（ホワイトボード的用途）
 
 ---
 
-## 個人ページ（予定）
+## 個人ページ（想定）
 
-- **ゆうま**
-  - 今日の予定
-  - 今やること（最大3つ）
-  - 安心・見通し重視
+### ゆうまページ
+- 今日の予定
+- 今やること（最大3つ）
+- 見通し・安心感を重視したUI
 
-- **あしゃ**
-  - TODO / メモ
-  - 作業や家計の思考補助
+### あしゃページ
+- TODO / メモ
+- 作業や家計などの思考補助
 
-- **そーくん**
-  - 時刻・天気
-  - ワンタップ外部リンク
-  - 応援メッセージ
+### そーくんページ
+- 時刻・天気
+- ワンタップ外部リンク
+- 応援メッセージ表示
 
 ---
 
 ## 技術スタック
 
+※ **ビルドツールとして使用。実行時依存はなし**
+
 - **Vite**
-- **Handlebars（vite-plugin-handlebars）**
+- **Handlebars**（vite-plugin-handlebars）
 - **Sass**
 - **ES Modules**
-- **PWA対応（予定）**
+- **PWA 対応（予定）**
 - **Firestore（必要になった場合のみ導入）**
-- デプロイ先：**Vercel**
+- デプロイ：**Vercel**
+
+### パッケージ管理
+- **pnpm**
+  - 高速・安定した依存管理のため採用
+  - 最終納品物（dist）には一切影響しない
 
 ---
+## 開発方針・メモ
+
+### JavaScript 設計
+
+- **HTML 1ページにつき 1エントリ JS**
+- ページ固有の処理は各ページ用 JS に記述
+- **共通処理は `import` で共有**
+- `main.js` は **アプリ全体の初期化ハブ**
+
+#### main.js の役割
+
+- Sass（CSS）の読み込み
+- 共通機能 JS の `import`
+- `DOMContentLoaded` 後の初期化処理
+
+---
+
+## パス設計ルール（重要）
+
+### JavaScript（import）
+
+- **相対パスで記述**
+- 基準は「その JS ファイルの位置」
+//import { initClock } from './features/clock.js';
+
+データ・リソース（fetch / img / a など）
+ルート基準パスで統一
+fetch('/src/data/garbage.json');
 
 ## ディレクトリ構成
 
@@ -71,7 +112,9 @@
 ├ index.html                # メイン画面（エントリ）
 ├ vite.config.js
 ├ package.json
-├ dist/                     # build 出力
+├ pnpm-lock.yaml
+│
+├ dist/                     # build 出力（最終納品物）
 │
 ├ public/                   # そのまま配信される静的ファイル
 │  ├ icons/
@@ -83,51 +126,24 @@
    │  ├ asha.html
    │  └ so.html
    │
-   ├ partials/              # handlebars partials
+   ├ partials/              # Handlebars partials
    │
    ├ styles/
-   │  └ style.scss          # 共通スタイル
+   │  └ style.scss          # 共通スタイル（全ページ）
    │
    ├ scripts/
-   │  ├ main.js             # アプリ初期化（JS/CSSの起点）
+   │  ├ main.js             # メイン画面用エントリ
+   │  ├ yuuma.js            # ゆうまページ用
+   │  ├ asha.js             # あしゃページ用
+   │  ├ so.js               # そーくんページ用
+   │
+   ├ features/              # 機能単位のJS（共通）
    │  ├ clock.js
    │  ├ weather.js
    │  ├ garbage.js
    │  └ homeMemo.js
    │
-   ├ assets/
-   │  └ js/
-   │     └ hamburger.js
-   │
-   └ data/                  # JSON管理データ
+   └ data/                  # JSON 管理データ
       ├ family.json
       ├ garbage.json
       └ config.json
-
----
-
-## 開発メモ
-main.js は アプリ全体の初期化ハブ。
-
-・CSS（Sass）の読み込み
-・各機能JSの import
-・DOMContentLoaded 後の初期化処理
-
-## パス設計ルール（重要）
-・import（JSモジュール）
-・相対パスで記述
-・基準は「そのJSファイルの場所」
-
-
-fetch / img / a（データ・リソース）
-
-ルート基準パスで統一
-　fetch('/src/data/garbage.json');
-
-データ管理方針
-種類	管理方法
-家族定義	JSON
-ゴミ日	JSON
-おうちメモ	localStorage
-天気	外部API
-共有・履歴	Firestore（必要時のみ）

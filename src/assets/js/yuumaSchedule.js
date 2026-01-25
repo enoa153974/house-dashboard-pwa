@@ -103,6 +103,14 @@ export function initYuumaSchedule() {
                 { id: 'wash', icon: '🧼', label: '上ぐつを洗う' },
                 { id: 'play', icon: '🎮', label: 'あそんでいいよ' }
             ]
+        },
+        sun: {
+            schedule: ['🏠 おやすみの日'],
+            belongings: [],
+            tasks: [
+                { id: 'rest', icon: '🌤', label: 'ゆっくりすごす' },
+                { id: 'play', icon: '🎮', label: 'あそんでいいよ' }
+            ]
         }
     };
 
