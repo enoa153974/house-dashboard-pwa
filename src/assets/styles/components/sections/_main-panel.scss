@@ -11,7 +11,7 @@
         }
     }
     .clock {
-        font-size:clamp(3rem, 1.421rem + 8.42vw, 9rem);
+        font-size:clamp(3rem, 1.158rem + 9.82vw, 10rem);
     }
 
     .date {
@@ -21,7 +21,7 @@
 
     /* 天気パネル */
     .weather-panel__inner {
-        font-size: var(--font-size-xl);
+        font-size: var(--font-size-2xl);
     }
 
     .weather-panel button {
