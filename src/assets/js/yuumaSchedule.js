@@ -49,7 +49,11 @@ export function initYuumaSchedule() {
                 { id: 'bag', icon: '🎒', label: 'ランドセルを部屋におく' },
                 { id: 'wash', icon: '🧼', label: 'すいとうをだす' },
                 { id: 'homework', icon: '📒', label: 'しゅくだい' },
-                { id: 'play', icon: '🎮', label: 'あそんでいいよ' }
+                { id: 'play', icon: '🎮', label: 'あそんでいいよ' },
+                { id: 'dinner', icon: '🍽', label: 'ばんごはん' },
+                { id: 'bath', icon: '🛁', label: 'おふろ' },
+                { id: 'teeth', icon: '🪥', label: 'はみがき' },
+                { id: 'water_toilet', icon: '🚰🚽', label: 'お水を飲む＆トイレ' }
             ]
         },
         tue: {
@@ -59,7 +63,11 @@ export function initYuumaSchedule() {
                 { id: 'bag', icon: '🎒', label: 'ランドセルを部屋におく' },
                 { id: 'wash', icon: '🧼', label: 'すいとうをだす' },
                 { id: 'homework', icon: '📒', label: 'しゅくだい' },
-                { id: 'play', icon: '🎮', label: 'あそんでいいよ' }
+                { id: 'play', icon: '🎮', label: 'あそんでいいよ' },
+                { id: 'dinner', icon: '🍽', label: 'ばんごはん' },
+                { id: 'bath', icon: '🛁', label: 'おふろ' },
+                { id: 'teeth', icon: '🪥', label: 'はみがき' },
+                { id: 'water_toilet', icon: '🚰🚽', label: 'お水を飲む＆トイレ' }
             ]
         },
         wed: {
@@ -69,7 +77,11 @@ export function initYuumaSchedule() {
                 { id: 'bag', icon: '🎒', label: 'ランドセルを部屋におく' },
                 { id: 'wash', icon: '🧼', label: 'すいとうをだす' },
                 { id: 'homework', icon: '📒', label: 'しゅくだい' },
-                { id: 'play', icon: '🎮', label: 'あそんでいいよ' }
+                { id: 'play', icon: '🎮', label: 'あそんでいいよ' },
+                { id: 'dinner', icon: '🍽', label: 'ばんごはん' },
+                { id: 'bath', icon: '🛁', label: 'おふろ' },
+                { id: 'teeth', icon: '🪥', label: 'はみがき' },
+                { id: 'water_toilet', icon: '🚰🚽', label: 'お水を飲む＆トイレ' }
             ]
         },
         thu: {
@@ -79,7 +91,11 @@ export function initYuumaSchedule() {
                 { id: 'bag', icon: '🎒', label: 'ランドセルを部屋におく' },
                 { id: 'wash', icon: '🧼', label: 'すいとうをだす' },
                 { id: 'homework', icon: '📒', label: 'しゅくだい' },
-                { id: 'play', icon: '🎮', label: 'あそんでいいよ' }
+                { id: 'play', icon: '🎮', label: 'あそんでいいよ' },
+                { id: 'dinner', icon: '🍽', label: 'ばんごはん' },
+                { id: 'bath', icon: '🛁', label: 'おふろ' },
+                { id: 'teeth', icon: '🪥', label: 'はみがき' },
+                { id: 'water_toilet', icon: '🚰🚽', label: 'お水を飲む＆トイレ' }
             ]
         },
         fri: {
@@ -92,7 +108,11 @@ export function initYuumaSchedule() {
                 { id: 'wash3', icon: '🧼', label: 'エプロンを洗たくものにだす' },
                 { id: 'wash4', icon: '🧼', label: '上ぐつを洗たくものにだす' },
                 { id: 'homework', icon: '📒', label: 'しゅくだい' },
-                { id: 'play', icon: '🎮', label: 'あそんでいいよ' }
+                { id: 'play', icon: '🎮', label: 'あそんでいいよ' },
+                { id: 'dinner', icon: '🍽', label: 'ばんごはん' },
+                { id: 'bath', icon: '🛁', label: 'おふろ' },
+                { id: 'teeth', icon: '🪥', label: 'はみがき' },
+                { id: 'water_toilet', icon: '🚰🚽', label: 'お水を飲む＆トイレ' }
             ]
         },
         sat: {
@@ -104,7 +124,11 @@ export function initYuumaSchedule() {
                 { id: 'wash2', icon: '🧼', label: 'すいとうをだす' },
                 { id: 'homework', icon: '📒', label: 'しゅくだい（まだなら）' },
                 { id: 'wash3', icon: '🧼', label: '上ぐつを洗う' },
-                { id: 'play', icon: '🎮', label: 'あそんでいいよ' }
+                { id: 'play', icon: '🎮', label: 'あそんでいいよ' },
+                { id: 'dinner', icon: '🍽', label: 'ばんごはん' },
+                { id: 'bath', icon: '🛁', label: 'おふろ' },
+                { id: 'teeth', icon: '🪥', label: 'はみがき' },
+                { id: 'water_toilet', icon: '🚰🚽', label: 'お水を飲む＆トイレ' }
             ]
         },
         sun: {
@@ -112,7 +136,11 @@ export function initYuumaSchedule() {
             belongings: [],
             tasks: [
                 { id: 'rest', icon: '🌤', label: 'ゆっくりすごす' },
-                { id: 'play', icon: '🎮', label: 'あそんでいいよ' }
+                { id: 'play', icon: '🎮', label: 'あそんでいいよ' },
+                { id: 'dinner', icon: '🍽', label: 'ばんごはん' },
+                { id: 'bath', icon: '🛁', label: 'おふろ' },
+                { id: 'teeth', icon: '🪥', label: 'はみがき' },
+                { id: 'water_toilet', icon: '🚰🚽', label: 'お水を飲む＆トイレ' }
             ]
         }
     };
@@ -163,7 +191,11 @@ export function initYuumaSchedule() {
     const ORDER_KEY = `yuuma-task-order-${todayKey}`;
 
     const savedOrder = JSON.parse(localStorage.getItem(ORDER_KEY));
-    if (savedOrder) {
+
+    if (
+        Array.isArray(savedOrder) &&
+        savedOrder.length === todayData.tasks.length
+    ) {
         savedOrder.forEach(id => {
             const el = taskListEl.querySelector(`[data-task-id="${id}"]`);
             if (el) taskListEl.appendChild(el);
