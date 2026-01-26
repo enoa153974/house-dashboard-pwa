@@ -34,12 +34,12 @@ export function initYuumaSchedule() {
     todayLabelEl.textContent = `きょうは ${WEEK_LABELS[dayIndex]}`;
 
     /* =========================
-       並び替え状態
+        並び替え状態
     ========================= */
     const reorderState = { isReordering: false };
 
     /* =========================
-       曜日別データ
+        曜日別データ
     ========================= */
     const WEEKLY_DATA = {
         mon: {
@@ -53,7 +53,8 @@ export function initYuumaSchedule() {
                 { id: 'dinner', icon: '🍽', label: 'ばんごはん' },
                 { id: 'bath', icon: '🛁', label: 'おふろ' },
                 { id: 'teeth', icon: '🪥', label: 'はみがき' },
-                { id: 'water_toilet', icon: '🚰🚽', label: 'お水を飲む＆トイレ' }
+                { id: 'water_toilet', icon: '🚰🚽', label: 'お水を飲む＆トイレ' },
+                { id: 'switch_phone', icon: '📱', label: 'スマホとswitchお片付け' }
             ]
         },
         tue: {
@@ -67,7 +68,9 @@ export function initYuumaSchedule() {
                 { id: 'dinner', icon: '🍽', label: 'ばんごはん' },
                 { id: 'bath', icon: '🛁', label: 'おふろ' },
                 { id: 'teeth', icon: '🪥', label: 'はみがき' },
-                { id: 'water_toilet', icon: '🚰🚽', label: 'お水を飲む＆トイレ' }
+                { id: 'water_toilet', icon: '🚰🚽', label: 'お水を飲む＆トイレ' },
+                { id: 'switch_phone', icon: '📱', label: 'スマホとswitchお片付け' }
+
             ]
         },
         wed: {
@@ -81,7 +84,9 @@ export function initYuumaSchedule() {
                 { id: 'dinner', icon: '🍽', label: 'ばんごはん' },
                 { id: 'bath', icon: '🛁', label: 'おふろ' },
                 { id: 'teeth', icon: '🪥', label: 'はみがき' },
-                { id: 'water_toilet', icon: '🚰🚽', label: 'お水を飲む＆トイレ' }
+                { id: 'water_toilet', icon: '🚰🚽', label: 'お水を飲む＆トイレ' },
+                { id: 'switch_phone', icon: '📱', label: 'スマホとswitchお片付け' }
+
             ]
         },
         thu: {
@@ -95,7 +100,9 @@ export function initYuumaSchedule() {
                 { id: 'dinner', icon: '🍽', label: 'ばんごはん' },
                 { id: 'bath', icon: '🛁', label: 'おふろ' },
                 { id: 'teeth', icon: '🪥', label: 'はみがき' },
-                { id: 'water_toilet', icon: '🚰🚽', label: 'お水を飲む＆トイレ' }
+                { id: 'water_toilet', icon: '🚰🚽', label: 'お水を飲む＆トイレ' },
+                { id: 'switch_phone', icon: '📱', label: 'スマホとswitchお片付け' }
+
             ]
         },
         fri: {
@@ -112,7 +119,9 @@ export function initYuumaSchedule() {
                 { id: 'dinner', icon: '🍽', label: 'ばんごはん' },
                 { id: 'bath', icon: '🛁', label: 'おふろ' },
                 { id: 'teeth', icon: '🪥', label: 'はみがき' },
-                { id: 'water_toilet', icon: '🚰🚽', label: 'お水を飲む＆トイレ' }
+                { id: 'water_toilet', icon: '🚰🚽', label: 'お水を飲む＆トイレ' },
+                { id: 'switch_phone', icon: '📱', label: 'スマホとswitchお片付け' }
+
             ]
         },
         sat: {
@@ -128,7 +137,8 @@ export function initYuumaSchedule() {
                 { id: 'dinner', icon: '🍽', label: 'ばんごはん' },
                 { id: 'bath', icon: '🛁', label: 'おふろ' },
                 { id: 'teeth', icon: '🪥', label: 'はみがき' },
-                { id: 'water_toilet', icon: '🚰🚽', label: 'お水を飲む＆トイレ' }
+                { id: 'water_toilet', icon: '🚰🚽', label: 'お水を飲む＆トイレ' },
+                { id: 'switch_phone', icon: '📱', label: 'スマホとswitchお片付け' }
             ]
         },
         sun: {
@@ -140,7 +150,9 @@ export function initYuumaSchedule() {
                 { id: 'dinner', icon: '🍽', label: 'ばんごはん' },
                 { id: 'bath', icon: '🛁', label: 'おふろ' },
                 { id: 'teeth', icon: '🪥', label: 'はみがき' },
-                { id: 'water_toilet', icon: '🚰🚽', label: 'お水を飲む＆トイレ' }
+                { id: 'water_toilet', icon: '🚰🚽', label: 'お水を飲む＆トイレ' },
+                { id: 'switch_phone', icon: '📱', label: 'スマホとswitchお片付け' }
+
             ]
         }
     };
@@ -149,7 +161,7 @@ export function initYuumaSchedule() {
     if (!todayData) return;
 
     /* =========================
-       表示：予定・持ち物
+        表示：予定・持ち物
     ========================= */
     scheduleListEl.innerHTML = '';
     todayData.schedule.forEach(text => {
@@ -166,7 +178,7 @@ export function initYuumaSchedule() {
     });
 
     /* =========================
-       やること生成
+        やること生成
     ========================= */
     taskListEl.innerHTML = '';
     todayData.tasks.forEach(task => {
@@ -186,7 +198,7 @@ export function initYuumaSchedule() {
     });
 
     /* =========================
-       並び順保存 / 復元
+        並び順保存 / 復元
     ========================= */
     const ORDER_KEY = `yuuma-task-order-${todayKey}`;
 
@@ -208,12 +220,12 @@ export function initYuumaSchedule() {
     }
 
     /* =========================
-       タッチ並び替え有効化
+        タッチ並び替え有効化
     ========================= */
     enableTouchSort(taskListEl, saveTaskOrder, reorderState);
 
     /* =========================
-       できた！保存
+        できた！保存
     ========================= */
     const STATUS_KEY = 'yuuma-task-status';
     const DATE_KEY = 'yuuma-task-date';
@@ -243,7 +255,7 @@ export function initYuumaSchedule() {
 }
 
 /* =========================
-   タッチ並び替えロジック
+    タッチ並び替えロジック
 ========================= */
 export function enableTouchSort(listEl, saveOrder, state) {
     let draggingEl = null;
