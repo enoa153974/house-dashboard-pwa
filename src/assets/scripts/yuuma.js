@@ -1,5 +1,5 @@
-import { initYuumaSchedule } from './yuumaSchedule.js';
-import { initExtraTasks } from './extraTasks.js';
+import { initYuumaSchedule } from './ui/yuumaSchedule.js';
+import { initExtraTasks } from './ui/extraTasks.js';
 import '../styles/style.scss';
 
 window.addEventListener('DOMContentLoaded', () => {

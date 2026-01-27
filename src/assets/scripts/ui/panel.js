@@ -2,7 +2,7 @@
 
 'use strict';
 
-import { db } from "./firebase.js";
+import { db } from "../firebase.js";
 import { collection, addDoc, getDocs } from "firebase/firestore";
 import {  } from "./switchPanel.js";
 

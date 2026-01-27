@@ -9,11 +9,11 @@
  */
 
 import '../styles/style.scss';
-import { initClock } from './clock.js';
-import { initWeather } from './weather.js';
-import { initGarbage } from './garbage.js';
-import { initMemo } from './memo.js';
-import { initNav } from './nav.js';
+import { initClock } from './ui/clock.js';
+import { initWeather } from './ui/weather.js';
+import { initGarbage } from './ui/garbage.js';
+import { initMemo } from './ui/memo.js';
+import { initNav } from './ui/nav.js';
 
 
 //import './switchPanel.js';
