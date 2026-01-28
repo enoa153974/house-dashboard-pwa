@@ -1,0 +1,134 @@
+.sota-page {
+
+    /* ページヘッダー */
+    .page-header {
+        .page-title {
+            font-size: var(--font-size-xl);
+            margin: 0;
+        }
+
+        .page-title i {
+            margin-right: 0.05em;
+        }
+
+        .btn--back {
+            font-size: var(--font-size-xl);
+        }
+    }
+
+
+
+    .meter__panel {
+        position: relative;
+        font-family: 'Share Tech Mono', monospace;
+        font-weight: bold;
+        border: solid #555 10px;
+        border-top: solid #555 20px;
+        background:
+            linear-gradient(to bottom,
+                #e0e0da 0%,
+                #d0d0ca 35%,
+                #c4c4be 70%,
+                #b8b8b2 100%);
+                h2{
+                    display: inline-block;
+                    font-size: var(--font-size-xl);
+                    border:solid #555 3px;
+                }
+    }
+
+    /* メーターボタン部分 */
+    .meter__btn {
+        gap: 0.75rem;
+
+        .meter__lamp {
+            position: relative;
+            padding: .25rem .75rem;
+            border: solid 5px #555;
+            border-radius: 10px;
+            font-size: clamp(0.75rem, -1.125rem + 12vw, 1.5rem);
+            background-color: #999;
+            color: #111;
+        }
+
+        .meter__lamp::before {
+            content: "";
+            position: absolute;
+            inset: -50%;
+            background:
+                radial-gradient(circle,
+                    rgba(255, 255, 255, .15) 0%,
+                    rgba(255, 255, 255, .08) 40%,
+                    rgba(255, 255, 255, 0) 70%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* 各メーターボタンの光演出 */
+        .meter__lamp--red {
+            background:
+                radial-gradient(circle,
+                    rgba(255, 60, 60, .45) 0%,
+                    rgba(255, 60, 60, .25) 45%,
+                    rgba(255, 60, 60, .12) 70%,
+                    rgba(255, 60, 60, 0) 85%);
+        }
+
+        .meter__lamp--blue {
+            background:
+                radial-gradient(circle,
+                    rgba(40, 120, 255, .5) 0%,
+                    rgba(40, 120, 255, .28) 45%,
+                    rgba(40, 120, 255, .14) 70%,
+                    rgba(40, 120, 255, 0) 85%);
+        }
+
+        .meter__lamp--green {
+            background:
+                radial-gradient(circle,
+                    rgba(120, 255, 120, .55) 0%,
+                    rgba(120, 255, 120, .3) 45%,
+                    rgba(120, 255, 120, .15) 70%,
+                    rgba(120, 255, 120, 0) 85%);
+        }
+
+        /* メーターボタン間のグレーライン */
+        .meter__line {
+            width: 70%;
+            height: 5px;
+            margin: 0 0 0 auto;
+            background-color: #999;
+            color: #111;
+
+        }
+
+    }
+
+    .so-checklist {
+        .checklist {
+            min-width: 12rem;
+
+            .checklist__item {
+                list-style: none;
+            }
+
+            .checklist__label-wrap {
+                display: flex;
+                align-items: center;
+                gap: .75rem;
+                padding: .25rem;
+            }
+
+            .checklist__checkbox {
+                width: 1.4rem;
+                height: 1.4rem;
+            }
+
+            .checklist__item.is-checked .checklist__label {
+                opacity: .5;
+                text-decoration: line-through;
+            }
+
+        }
+    }
+}
