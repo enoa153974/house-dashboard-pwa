@@ -71,3 +71,29 @@ export function smoothScrollToTarget(selector, offset = { pc: 101, sp: 70 }) {
         behavior: 'smooth'
     });
 }
+
+// 画像が読み込まれてからページを表示（ロード）
+export function waitForImages(callback) {
+    const images = Array.from(document.images);
+
+    if (images.length === 0) {
+        callback();
+        return;
+    }
+
+    let loaded = 0;
+
+    images.forEach(img => {
+        if (img.complete) {
+            loaded++;
+        } else {
+            img.addEventListener('load', done);
+            img.addEventListener('error', done);
+        }
+    });
+
+    function done() {
+        loaded++;
+        if (loaded === images.length) callback();
+    }
+}

@@ -1,4 +1,11 @@
 .sota-page {
+    body {
+        opacity: 0;
+    }
+
+    body.is-ready {
+        opacity: 1;
+    }
 
     /* ページヘッダー */
     .page-header {
