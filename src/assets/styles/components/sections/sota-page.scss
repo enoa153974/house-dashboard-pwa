@@ -1,6 +1,9 @@
-
-
     .sota-page {
+        opacity: 0;
+
+        .sota-page .is-ready {
+            opacity: 1;
+        }
 
         /* ページヘッダー */
         .page-header {
