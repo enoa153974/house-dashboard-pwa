@@ -21,15 +21,15 @@ export function initSotaIllustPanel() {
 
     const ILLUST_SET = [
         { image: '/images/yuuka.jpg', message: '計算通り♪完璧～！' },
-        { image: '/images/kikyou.jpg', message: '状況、把握しました。' },
+        { image: '/images/kikyou.jpg', message: '常に私の目の届く場所に…' },
         { image: '/images/kazusa.jpg', message: '……別に、嫌じゃないし。' },
-        { image: '/images/mine.jpg', message: '規律は、力です。' },
+        { image: '/images/mine.jpg', message: '誇りと新年を胸に刻み…！' },
         { image: '/images/mari-.jpg', message: '神さまが見守っています。' },
         { image: '/images/mimori.jpg', message: '流れに任せましょう。' },
         { image: '/images/miyako.jpg', message: '了解です！任務開始！' },
         { image: '/images/mika.jpg', message: 'ねえ、無理してない？' },
-        { image: '/images/nagisa.jpg', message: '落ち着いて、優雅に。' },
-        { image: '/images/toki.jpg', message: '判断に、問題なし。' }
+        { image: '/images/nagisa.jpg', message: 'ロールケーキをぶち込みますよっ！？' },
+        { image: '/images/toki.jpg', message: 'お待ちしておりました、先生' }
     ];
 
     const lastIndex = Number(localStorage.getItem(STORAGE_KEY));

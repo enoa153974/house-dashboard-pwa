@@ -1,6 +1,8 @@
     .sota-page {
+        /* 最初は画面を非表示 */
         opacity: 0;
-
+        
+        /*ページの読み込みが完了したら表示する  */
         &.is-ready {
             opacity: 1;
         }
