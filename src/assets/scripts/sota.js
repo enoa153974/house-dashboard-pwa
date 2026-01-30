@@ -4,10 +4,11 @@ import { initSotaIllustPanel } from './ui/sotaIllustPanel.js';
 import { waitForImages } from './util.js';
 
 window.addEventListener('DOMContentLoaded', () => {
+
+    initSoChecklist();
+    initSotaIllustPanel();
     // HTML読み込みが終わったあとに実行される処理
     waitForImages(() => {
         document.body.classList.add('is-ready');
     });
-    initSoChecklist();
-    initSotaIllustPanel();
 });
