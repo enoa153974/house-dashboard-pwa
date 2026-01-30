@@ -1,7 +1,7 @@
     .sota-page {
         opacity: 0;
 
-        .sota-page .is-ready {
+        &.is-ready {
             opacity: 1;
         }
 
