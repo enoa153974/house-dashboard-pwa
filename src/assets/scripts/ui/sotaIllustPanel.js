@@ -4,7 +4,11 @@
  * ・そーくん用 応援イラスト＆コメント
  * ・リロードごとにランダム表示
  * ・直前と同じキャラは出さない
+ * ・タイピング演出は外から開始
  */
+
+let typingTimer = null;
+let currentMessage = ''; // ← 後で使う
 
 export function initSotaIllustPanel() {
 
@@ -39,26 +43,38 @@ export function initSotaIllustPanel() {
 
     const selected = ILLUST_SET[index];
 
+    // 画像だけ先に表示
     imageEl.src = selected.image;
 
-    typeText(messageEl, selected.message, 70);
+    // メッセージは保存しておくだけ
+    currentMessage = selected.message;
+    messageEl.textContent = '';
+}
 
-    function typeText(el, text, speed = 80) {
-        el.textContent = '';
-        let index = 0;
+/* =========================
+    タイピング開始（外から呼ぶ）
+========================= */
+export function startTyping(speed = 70) {
 
-        const cursor = document.createElement('span');
-        cursor.className = 'typing-cursor';
-        cursor.textContent = '｜';
-        el.appendChild(cursor);
+    const messageEl = document.getElementById('illustMessage');
+    if (!messageEl || !currentMessage) return;
 
-        const timer = setInterval(() => {
-            if (index < text.length) {
-                cursor.before(text[index]);
-                index++;
-            } else {
-                clearInterval(timer);
-            }
-        }, speed);
-    }
+    clearInterval(typingTimer);
+    messageEl.textContent = '';
+
+    let index = 0;
+
+    const cursor = document.createElement('span');
+    cursor.className = 'typing-cursor';
+    cursor.textContent = '｜';
+    messageEl.appendChild(cursor);
+
+    typingTimer = setInterval(() => {
+        if (index < currentMessage.length) {
+            cursor.before(currentMessage[index]);
+            index++;
+        } else {
+            clearInterval(typingTimer);
+        }
+    }, speed);
 }
