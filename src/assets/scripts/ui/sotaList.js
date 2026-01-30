@@ -103,4 +103,5 @@ export function initSoChecklist() {
             localStorage.setItem(DATE_KEY, todayStr);
         }
     }
+    
 }

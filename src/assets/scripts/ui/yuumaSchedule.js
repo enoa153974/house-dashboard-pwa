@@ -111,9 +111,7 @@ export function initYuumaSchedule() {
             tasks: [
                 { id: 'bag', icon: '🎒', label: 'ランドセルを部屋におく' },
                 { id: 'wash1', icon: '🧼', label: 'すいとうをだす' },
-                { id: 'wash2', icon: '🧼', label: '体そう服を洗たくものにだす' },
-                { id: 'wash3', icon: '🧼', label: 'エプロンを洗たくものにだす' },
-                { id: 'wash4', icon: '🧼', label: '上ぐつを洗たくものにだす' },
+                { id: 'wash2', icon: '🧼', label: '体そう服、エプロン、上ぐつを洗たくものにだす' },
                 { id: 'homework', icon: '📒', label: 'しゅくだい' },
                 { id: 'play', icon: '🎮', label: 'あそんでいいよ' },
                 { id: 'dinner', icon: '🍽', label: 'ばんごはん' },
