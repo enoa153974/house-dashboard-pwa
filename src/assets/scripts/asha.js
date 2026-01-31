@@ -2,30 +2,9 @@ import '../styles/style.scss';
 import { initHousework } from './ui/housework.js';
 import { initExtraTaskManager } from './common/extraTaskManager.js';
 import { initNav } from './ui/nav.js';
-/* =========================
- * Data
- * ========================= */
-const RECIPES = [
-    {
-        id: 'recipe-001',
-        title: '照り焼きチキン',
-        summary: '醤油2：みりん2：砂糖1 / 皮目から',
-        tags: ['定番', 'フライパン'],
-        ingredients: ['鶏もも肉', 'しょうゆ', 'みりん', '砂糖'],
-        steps: ['皮目から焼く', '調味料を絡める'],
-        sourceUrl: 'onenote://example'
-    },
-    {
-        id: 'recipe-002',
-        title: '神パスタ',
-        summary: 'オイル多め・にんにく焦がさない',
-        tags: ['簡単', '10分'],
-        ingredients: ['パスタ', 'にんにく', 'オリーブオイル'],
-        steps: ['にんにくを弱火で熱する', 'オイルと絡める'],
-        sourceUrl: ''
-    }
-];
+import recipes from '../data/recipes.json';
 
+const RECIPES = recipes;
 /* =========================
  * Render
  * ========================= */
@@ -43,7 +22,7 @@ function renderRecipeList(recipes) {
         button.dataset.recipeId = recipe.id;
 
         const title = document.createElement('span');
-        title.className = 'recipe-card__title u-border-left ';
+        title.className = 'recipe-card__title u-border-left mr-4';
         title.textContent = recipe.title;
 
         const tagsWrap = document.createElement('span');

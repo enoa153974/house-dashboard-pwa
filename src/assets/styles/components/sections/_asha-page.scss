@@ -97,11 +97,73 @@
         .recipe-list__title {
             font-size: var(--font-size-xl);
         }
+
+        .recipe-card__title {
+            font-size: var(--font-size-lg);
+        }
+
+        .recipe-tag {
+            display: inline-block;
+            margin: 0 .5em .6em 0;
+            padding: .6em;
+            line-height: 1;
+            text-decoration: none;
+            color: var(--main-color);
+            font-weight: var(--font-weight-semibold);
+            background-color: #fff;
+            border: 1px solid var(--main-color);
+            border-left: 10px solid var(--main-color);
+            border-top-right-radius: 4px;
+            border-bottom-right-radius: 4px;
+            font-size: var(--font-size-sm);
+        }
     }
 
+    /* 開いた各レシピの内容 */
     .recipe-detail {
         border: solid 3px var(--sub-color);
 
+        &__title {
+            position: relative;
+            padding-left: 0.75rem;
+        }
+
+        &__title::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            width: 4px;
+            background-color: var(--sub-color);
+        }
+
+        .recipe-tag {
+            display: inline-block;
+            margin: .5em .5em .6em 0;
+            padding: .6em;
+            line-height: 1;
+            text-decoration: none;
+            color: var(--main-color);
+            font-weight: var(--font-weight-semibold);
+            background-color: #fff;
+            border: 1px solid var(--main-color);
+            border-left: 10px solid var(--main-color);
+            border-top-right-radius: 4px;
+            border-bottom-right-radius: 4px;
+            font-size: var(--font-size-sm);
+        }
+
+        .recipe-section-title {
+            display: inline-block;
+            font-size: var(--font-size-lg);
+            background: linear-gradient(transparent 70%, #80d8ff 30%);
+        }
+
+        .btn--back {
+            font-size: var(--font-size-xl);
+            font-weight: bold;
+        }
     }
 
     /* レシピタイマーのデザイン */
@@ -135,9 +197,10 @@
 
     }
 
-    .card-title{
+    .card-title {
         font-size: var(--font-size-xl);
     }
+
     /* あしゃ用 */
     .message__list {
         gap: .5rem;
@@ -151,7 +214,7 @@
         }
     }
 
-    .btn{
+    .btn {
         padding: 1rem;
     }
 }
