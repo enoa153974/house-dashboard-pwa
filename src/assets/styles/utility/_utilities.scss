@@ -13,19 +13,6 @@
     max-width: 1024px;
 }
 
-/* === Display Utilities === */
-.hidden {
-    display: none;
-}
-
-.block {
-    display: block;
-}
-
-.inline-block {
-    display: inline-block;
-}
-
 /* === Flex & Alignment === */
 .flex {
     display: flex;
@@ -136,6 +123,20 @@
     object-position: center bottom;
 }
 
+
+/* === Display Utilities === */
+.hidden {
+    display: none;
+}
+
+.block {
+    display: block;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
 /* === Border Radius === */
 .rounded {
     border-radius: var(--radius);
@@ -179,7 +180,46 @@
     white-space: pre-line;
 }
 
+/* 状態クラス */
+
+/* 表示 */
+.is-hidden {
+    display: none !important;
+}
+.is-visible {}
+
+/* 有効・無効 */
+.is-disabled {
+    pointer-events: none;
+}
+.is-enabled {}
+
+/* UI状態 */
+.is-active {}
+.is-open {}
+.is-closed {}
+.is-selected {}
+.is-current {}
+
+/* 進行・処理 */
+.is-loading {}
+.is-loaded {}
+.is-error {}
+
+.is-running {}
+.is-paused {}
+.is-stopped {}
+
+.is-complete {}
+.is-incomplete {}
+
+/* その他 */
+.is-empty {}
+.is-highlighted {}
+.is-alert {}
+.is-warning {}
 @media screen and (max-width: 767px) {
+
     /* === 幅・表示 === */
     .sm\:w-full {
         width: 100%;
