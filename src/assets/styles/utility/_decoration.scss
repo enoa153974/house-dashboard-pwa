@@ -1,7 +1,7 @@
 /* 見出しにアンダーラインを引くクラス */
 .u-heading-line {
     position: relative;
-    padding-bottom: 1.5rem;
+    padding-bottom: .5em;
 }
 
 /* 先頭の色だけ別色 */
@@ -12,7 +12,7 @@
     left: 0;
     height: 4px;
     width: 13%;
-    background: var(--accent-color);
+    background: var(--sub-color);
     z-index: 1;
 }
 
@@ -73,7 +73,7 @@
     bottom: 0;
     left: 0;
     width: 4px;
-    background-color: var(--accent-color);
+    background-color: var(--sub-color);
 }
 
 

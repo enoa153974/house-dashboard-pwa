@@ -41,7 +41,7 @@ function renderRecipeList(recipes) {
         button.dataset.recipeId = recipe.id;
 
         const title = document.createElement('span');
-        title.className = 'recipe-card__title';
+        title.className = 'recipe-card__title u-border-left ';
         title.textContent = recipe.title;
 
         const tagsWrap = document.createElement('span');
@@ -218,12 +218,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         recipeList.classList.add('is-hidden');
         recipeDetail.classList.remove('is-hidden');
-        recipeTimer.classList.remove('is-hidden');
     });
 
     backButton.addEventListener('click', () => {
         recipeDetail.classList.add('is-hidden');
         recipeList.classList.remove('is-hidden');
-        recipeTimer.classList.add('is-hidden');
     });
 });

@@ -1,13 +1,59 @@
 .asha-page {
 
-    
-    /* レシピタイマーのデザイン */
-    .recipe-timer.is-running {
-        /* 実行中の見た目 */
+    /* ページヘッダー */
+    .page-header {
+        .page-title {
+            font-size: var(--font-size-xl);
+            margin: 0;
+        }
+
+        .page-title i {
+            margin-right: 0.05em;
+        }
+
+        .btn--back {
+            font-size: var(--font-size-xl);
+        }
     }
 
-    .recipe-timer.is-finished {
-        /* 終了時（点滅・色変えなど） */
+    .recipe-list {
+        border: solid 3px var(--sub-color);
     }
+
+    .recipe-detail {
+        border: solid 3px var(--sub-color);
+
+    }
+
+    /* レシピタイマーのデザイン */
+    .recipe-timer {
+        color: #777;
+        font-family: 'Share Tech Mono', monospace;
+        border: 5px inset var(--accent-color);
+        margin-left: 30%;
+
+
+        .recipe-timer__display {
+            font-size: var(--font-size-4xl);
+            letter-spacing: .1em;
+        }
+
+        /* 各ボタンのデザイン */
+        .recipe-timer__controls button{
+            border: solid 1px var(--accent-color);
+            padding: .25rem;
+            border-radius: 8px;
+            background-color: var(--accent-color);
+            font-weight: var(--font-weight-bold);
+        }
+
+        /* タイマーが０になったときのデザイン */
+        .recipe-timer.is-finished .recipe-timer__display {
+            color: #ff5252;
+            animation: blink 1.5s infinite;
+        }
+
+    }
+
 
 }

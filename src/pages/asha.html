@@ -40,85 +40,108 @@
 </head>
 
 <body>
+
     <main class="main__wrapper">
         <section class="asha-page">
-            <!-- 状態 / 家事 / タイマー / レシピ などが入る想定 -->
-
-            <section class="recipe-list">
-                <h2 class="recipe-list__title">レシピ</h2>
-
-                <ul class="recipe-list__items">
-                    <!-- JSで生成 -->
-                </ul>
-            </section>
-
-
-
-            <section class="recipe-detail is-hidden">
-                <header class="recipe-detail__header">
-                    <button class="recipe-back" type="button" aria-label="一覧に戻る">
-                        ←
+            <!-- ヘッダー -->
+            <header class="page-header text-center pt-4 bg-accent">
+                <div class="flex">
+                    <button class="btn btn--back px-6" onclick="history.back()">
+                        <i class="fa-solid fa-rotate-left"></i>
                     </button>
-                    <h3 class="recipe-detail__title">照り焼きチキン</h3>
-
-                    <div class="recipe-detail__meta">
-                        <button class="recipe-favorite" type="button" aria-pressed="false">★</button>
+                    <div class="flex justify-center items-center w-full pr-20">
+                        <h1 class="page-title">
+                            <i class="fa-solid fa-person-dress"></i>
+                            あしゃのページ
+                        </h1>
                     </div>
-                </header>
+                </div>
+            </header>
 
-                <!-- 要点メモ（最優先） -->
-                <p class="recipe-summary">
-                    醤油2：みりん2：砂糖1 / 皮目から
-                </p>
 
-                <!-- タグ -->
-                <ul class="recipe-tags">
-                    <li class="recipe-tag">定番</li>
-                    <li class="recipe-tag">フライパン</li>
-                </ul>
-
-                <!-- 材料 -->
-                <section class="recipe-ingredients">
-                    <h4 class="recipe-section-title">材料</h4>
-                    <ul class="ingredient-list">
-                        <li class="ingredient-item">鶏もも肉</li>
-                        <li class="ingredient-item">しょうゆ</li>
-                    </ul>
-                </section>
-
-                <!-- 手順 -->
-                <section class="recipe-steps">
-                    <h4 class="recipe-section-title">作り方</h4>
-                    <ol class="step-list">
-                        <li class="step-item">皮目から焼く</li>
-                        <li class="step-item">調味料を絡める</li>
-                    </ol>
-                </section>
-
-                <!-- アクション -->
-                <div class="recipe-actions">
-                    <button class="recipe-action" type="button">買い物メモに追加</button>
-                    <button class="recipe-action" type="button">今日使った</button>
+            <div class="l-row l-row--gap py-4 px-4">
+                <div class="l-column l-column--6">
+                    <!-- 左半分 -->
                 </div>
 
-                <!-- 出典 -->
-                <footer class="recipe-source">
-                    <a href="#" class="recipe-source__link">OneNoteで開く</a>
-                </footer>
-            </section>
-        </section>
+                <div class="l-column l-column--6">
+                    <section class="recipe-list rounded py-4 px-4">
+                        <h2 class="recipe-list__title u-heading-line u-heading-line::before">お料理帳</h2>
 
-        <section class="recipe-timer">
-            <div class="recipe-timer__display">00:00</div>
+                        <ul class="recipe-list__items px-4 py-4">
+                            <!-- JSで生成 -->
+                        </ul>
+                    </section>
 
-            <div class="recipe-timer__controls">
-                <button type="button" data-minutes="1">1分</button>
-                <button type="button" data-minutes="5">5分</button>
-                <button type="button" data-minutes="10">10分</button>
-                <button type="button" data-action="stop">停止</button>
-                <button type="button" data-action="reset">リセット</button>
+                    <!-- レシピの詳細・各レシピボタンクリックで開く -->
+                    <section class="recipe-detail  rounded py-4 px-4 is-hidden">
+                        <header class="recipe-detail__header">
+                            <button class="recipe-back" type="button" aria-label="一覧に戻る">
+                                ←
+                            </button>
+                            <h3 class="recipe-detail__title">照り焼きチキン</h3>
+
+                            <div class="recipe-detail__meta">
+                                <button class="recipe-favorite" type="button" aria-pressed="false">★</button>
+                            </div>
+                        </header>
+
+                        <!-- 要点メモ（最優先） -->
+                        <p class="recipe-summary">
+                            醤油2：みりん2：砂糖1 / 皮目から
+                        </p>
+
+                        <!-- タグ -->
+                        <ul class="recipe-tags">
+                            <li class="recipe-tag">定番</li>
+                            <li class="recipe-tag">フライパン</li>
+                        </ul>
+
+                        <!-- 材料 -->
+                        <section class="recipe-ingredients">
+                            <h4 class="recipe-section-title">材料</h4>
+                            <ul class="ingredient-list">
+                                <li class="ingredient-item">鶏もも肉</li>
+                                <li class="ingredient-item">しょうゆ</li>
+                            </ul>
+                        </section>
+
+                        <!-- 手順 -->
+                        <section class="recipe-steps">
+                            <h4 class="recipe-section-title">作り方</h4>
+                            <ol class="step-list">
+                                <li class="step-item">皮目から焼く</li>
+                                <li class="step-item">調味料を絡める</li>
+                            </ol>
+                        </section>
+
+                        <!-- アクション -->
+                        <div class="recipe-actions">
+                            <button class="recipe-action" type="button">買い物メモに追加</button>
+                            <button class="recipe-action" type="button">今日使った</button>
+                        </div>
+
+                        <!-- 出典 -->
+                        <footer class="recipe-source">
+                            <a href="#" class="recipe-source__link">OneNoteで開く</a>
+                        </footer>
+                    </section>
+
+                    <!-- レシピタイマー -->
+                    <section class="recipe-timer py-2 pl-4 pr-2 mt-2">
+                        <div class="recipe-timer__display">00:00</div>
+
+                        <div class="recipe-timer__controls">
+                            <button type="button" data-minutes="3">3分</button>
+                            <button type="button" data-minutes="5">5分</button>
+                            <button type="button" data-minutes="10">10分</button>
+                            <button type="button" data-action="stop" class="ml-4"><i class="fas fa-stop"></i></button>
+                            <button type="button" data-action="reset"><i class="fas fa-rotate-right"></i></button>
+                        </div>
+                    </section>
+                </div>
             </div>
-        </section>
+
     </main>
     <!-- ページ固有js -->
     <script type="module" src="/src/assets/scripts/asha.js"></script>
