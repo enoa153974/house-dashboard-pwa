@@ -5,7 +5,7 @@ self.addEventListener('install', () => {
 self.addEventListener('activate', () => {
     self.clients.claim();
 });
-
+/* 
 self.addEventListener('fetch', (event) => {
     // 今は何もしない
-});
+}); */

@@ -1,5 +1,7 @@
 import '../styles/style.scss';
-
+import { initHousework } from './ui/housework.js';
+import { initExtraTaskManager } from './common/extraTaskManager.js';
+import { initNav } from './ui/nav.js';
 /* =========================
  * Data
  * ========================= */
@@ -147,7 +149,7 @@ function initRecipeTimer() {
             timerId = null;
         }
         timerEl.classList.remove('is-running');
-         stopSound();
+        stopSound();
     }
 
     function resetTimer() {
@@ -200,12 +202,25 @@ function initRecipeTimer() {
 document.addEventListener('DOMContentLoaded', () => {
     const recipeList = document.querySelector('.recipe-list');
     const recipeDetail = document.querySelector('.recipe-detail');
-    const recipeTimer = document.querySelector('.recipe-timer');
     const backButton = document.querySelector('.recipe-back');
     const recipeListItems = document.querySelector('.recipe-list__items');
+    const listEl = document.getElementById('asha-extra-task-list');
+    if (!listEl) return;
 
+    initHousework();
+    initNav();
     renderRecipeList(RECIPES);
     initRecipeTimer();
+    initExtraTaskManager({
+        listEl,
+        formEl: document.getElementById('asha-extra-task-form'),
+        inputEl: document.getElementById('asha-extra-task-input'),
+        resetBtn: document.getElementById('asha-extra-task-reset'),
+        storageKeyPrefix: 'asha-extra',
+        showHanamaru: false
+    });
+
+
 
     recipeListItems.addEventListener('click', (e) => {
         const button = e.target.closest('.recipe-card__button');

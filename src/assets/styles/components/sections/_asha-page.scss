@@ -16,8 +16,87 @@
         }
     }
 
+
+    /* 家事タスクカード */
+
+    .housework {
+
+        /* 家事タスク　見出し */
+        .housework__title {
+            font-size: var(--font-size-xl);
+        }
+
+        .housework__grid {
+            display: grid;
+            grid-template-rows: repeat(3, auto); // ★ 行数を固定
+            grid-template-columns: repeat(2, 1fr); // 2列
+            grid-auto-flow: column; // 縦に詰める
+            gap: 1.2rem;
+        }
+
+        .housework-card {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            background: #fff;
+            border: 2px solid #ddd;
+            border-radius: 1rem;
+            padding: 1.5rem 0 .75rem;
+            text-align: center;
+            transition: opacity .2s, transform .1s;
+            touch-action: none;
+            user-select: none;
+            -webkit-user-select: none;
+            -webkit-touch-callout: none;
+        }
+
+        .housework-card.is-dragging {
+            position: relative;
+            z-index: 10;
+            background: #fff;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, .15);
+            transform: scale(1.03);
+        }
+
+        .housework-card__number {
+            position: absolute;
+            top: -.8rem;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #fff;
+            border: 2px solid #aaa;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            font-size: .9rem;
+            font-weight: 600;
+            display: grid;
+            place-items: center;
+        }
+
+        .housework-card__icon {
+            font-size: var(--font-size-lg);
+            margin-bottom: .5rem;
+        }
+
+        .housework-card__label {
+            font-size: var(--font-size-base);
+        }
+
+        .housework-card.is-done {
+            opacity: .3;
+        }
+
+    }
+
+
+    /* お料理帳 */
     .recipe-list {
         border: solid 3px var(--sub-color);
+
+        .recipe-list__title {
+            font-size: var(--font-size-xl);
+        }
     }
 
     .recipe-detail {
@@ -30,7 +109,6 @@
         color: #777;
         font-family: 'Share Tech Mono', monospace;
         border: 5px inset var(--accent-color);
-        margin-left: 30%;
 
 
         .recipe-timer__display {
@@ -39,7 +117,7 @@
         }
 
         /* 各ボタンのデザイン */
-        .recipe-timer__controls button{
+        .recipe-timer__controls button {
             border: solid 1px var(--accent-color);
             padding: .25rem;
             border-radius: 8px;
@@ -48,12 +126,32 @@
         }
 
         /* タイマーが０になったときのデザイン */
-        .recipe-timer.is-finished .recipe-timer__display {
-            color: #ff5252;
-            animation: blink 1.5s infinite;
+        &.is-finished {
+            .recipe-timer__display {
+                color: #ff5252;
+                animation: blink 1.5s infinite;
+            }
         }
 
     }
 
+    .card-title{
+        font-size: var(--font-size-xl);
+    }
+    /* あしゃ用 */
+    .message__list {
+        gap: .5rem;
 
+        .task__label::before {
+            content: "・";
+        }
+
+        .task.is-done {
+            opacity: .4;
+        }
+    }
+
+    .btn{
+        padding: 1rem;
+    }
 }

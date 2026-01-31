@@ -9,6 +9,7 @@
  * ※ HTML5 Drag & Drop は使っていない
  */
 
+import { enableTouchSort } from '../common/touchSort.js'
 export function initYuumaSchedule() {
 
     /* =========================
@@ -220,8 +221,12 @@ export function initYuumaSchedule() {
     /* =========================
         タッチ並び替え有効化
     ========================= */
-    enableTouchSort(taskListEl, saveTaskOrder, reorderState);
-
+    enableTouchSort(
+        taskListEl,
+        saveTaskOrder,
+        reorderState,
+        '.task'
+    );
     /* =========================
         できた！保存
     ========================= */
@@ -250,78 +255,4 @@ export function initYuumaSchedule() {
             localStorage.setItem(DATE_KEY, todayStr);
         }
     }
-}
-
-/* =========================
-    タッチ並び替えロジック
-========================= */
-export function enableTouchSort(listEl, saveOrder, state) {
-    let draggingEl = null;
-    let pressTimer = null;
-    let activePointerId = null;
-
-    listEl.querySelectorAll('.task').forEach(task => {
-
-        /* コンテキストメニュー完全禁止 */
-        task.addEventListener('contextmenu', e => {
-            e.preventDefault();
-            e.stopPropagation();
-        });
-
-        task.addEventListener('pointerdown', e => {
-            if (e.button !== 0) return;
-
-            activePointerId = e.pointerId;
-
-            pressTimer = setTimeout(() => {
-                draggingEl = task;
-                state.isReordering = true;
-                task.classList.add('is-dragging');
-
-                // ★ 捕まえる
-                task.setPointerCapture(activePointerId);
-            }, 400);
-        });
-
-        task.addEventListener('pointermove', e => {
-            if (!draggingEl || e.pointerId !== activePointerId) return;
-
-            const target = document
-                .elementFromPoint(e.clientX, e.clientY)
-                ?.closest('.task');
-
-            if (target && target !== draggingEl) {
-                const rect = target.getBoundingClientRect();
-                const after = e.clientY > rect.top + rect.height / 2;
-                listEl.insertBefore(
-                    draggingEl,
-                    after ? target.nextSibling : target
-                );
-            }
-
-            e.preventDefault();
-        });
-
-        /* ★ ここが超重要 */
-        const finishDrag = () => {
-            clearTimeout(pressTimer);
-
-            if (draggingEl) {
-                draggingEl.classList.remove('is-dragging');
-
-                try {
-                    draggingEl.releasePointerCapture(activePointerId);
-                } catch (_) { }
-
-                draggingEl = null;
-                state.isReordering = false;
-                activePointerId = null;
-                saveOrder();
-            }
-        };
-
-        task.addEventListener('pointerup', finishDrag);
-        task.addEventListener('pointercancel', finishDrag);
-        task.addEventListener('pointerleave', finishDrag);
-    });
 }
