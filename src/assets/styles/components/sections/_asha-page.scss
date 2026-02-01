@@ -1,5 +1,6 @@
-.asha-page {
+@use '../../foundation/import.scss' as *;
 
+.asha-page {
     /* ページヘッダー */
     .page-header {
         .page-title {
