@@ -61,7 +61,7 @@
         <main class="main__wrapper py-4 px-4">
             <div>
                 <!-- 横並び1/1 -->
-                <div class="l-row l-row--gap ">
+                <div class="l-row l-row--gap sm:flex-col">
 
                     <!-- 家事タスクカード -->
                     <div class="l-column l-column--6">
@@ -77,11 +77,11 @@
 
                     <!-- お料理帳 -->
                     <div class="l-column l-column--6">
-                        <section class="recipe-list rounded py-4 px-4">
+                        <section class="recipe-list rounded py-4 px-4 sm:px-2">
                             <h2 class="recipe-list__title u-heading-line u-heading-line::before"><i
                                     class="fas fa-kitchen-set pr-2"></i>お料理帳</h2>
 
-                            <ul class="recipe-list__items px-4 py-4">
+                            <ul class="recipe-list__items px-4 py-4 sm:px-0">
                                 <!-- JSで生成 -->
                             </ul>
                         </section>
@@ -143,7 +143,7 @@
 
                         <div class="l-row l-row--gap">
                             <div class="l-column l-column--3 py-2">
-                                <button class="btn controls__btn" id="btnAssistantGPT">
+                                <button class="btn controls__btn bg-sub" id="btnAssistantGPT">
                                     <span></span>
                                     <i class="fa-solid fa-robot"></i>
                                     <p>assistant</p>
@@ -184,7 +184,7 @@
                     </ul>
 
                     <!-- 入力欄（あしゃ用） -->
-                    <form class="message__form px-4" id="asha-extra-task-form">
+                    <form class="message__form px-4 sm:px-0" id="asha-extra-task-form">
                         <input type="text" id="asha-extra-task-input" placeholder="メモを入力してね" autocomplete="off" />
                         <button type="submit" class="btn btn--add">
                             <i class="fa-solid fa-plus"></i>
