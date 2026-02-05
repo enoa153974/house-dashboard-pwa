@@ -110,36 +110,88 @@
             </section>
 
             <!-- 家族の伝言 -->
-            <section class="card message bg-white">
-                <h2 class="card-title">
-                    <i class="fa-solid fa-comment-dots"></i>
-                    今日の でんごん
-                </h2>
+            <section class="card message bg-white flex flex-col justify-between">
+                <div>
+                    <h2 class="card-title">
+                        <i class="fa-solid fa-comment-dots"></i>
+                        今日の でんごん
+                    </h2>
 
-                <ul class="message__list" id="extra-task-list">
-                    <!-- 手入力で追加されるタスク -->
-                </ul>
+                    <ul class="message__list" id="extra-task-list">
+                        <!-- 手入力で追加されるタスク -->
+                    </ul>
 
-                <!-- 入力欄（あしゃ用） -->
-                <form class="message__form" id="extra-task-form">
-                    <input type="text" id="extra-task-input" placeholder="ついかのやること" autocomplete="off" />
-                    <button type="submit" class="btn btn--add">
-                        <i class="fa-solid fa-plus"></i>
+                    <!-- 入力欄（あしゃ用） -->
+                    <form class="message__form" id="extra-task-form">
+                        <input type="text" id="extra-task-input" placeholder="ついかのやること" autocomplete="off" />
+                        <button type="submit" class="btn btn--add">
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+                    </form>
+                    <button type="button" id="extra-task-reset" class="btn btn--reset">
+                        <i class="fa-solid fa-rotate-left"></i>
+                        ぜんぶリセット
                     </button>
-                </form>
-                <button type="button" id="extra-task-reset" class="btn btn--reset">
-                    <i class="fa-solid fa-rotate-left"></i>
-                    ぜんぶリセット
-                </button>
+
+
+                </div>
+                <div>
+                    <!-- ゆうまページのどこか -->
+                    <button class="stamp-open-btn">リングフィットスタンプカード</button>
+
+                    <!-- スタンプカードスライド -->
+                    <section id="stamp-panel" class="stamp-panel">
+                        <header class="stamp-header">
+                            <button class="stamp-close-btn">← もどる</button>
+                            <h2>リングフィットスタンプカード</h2>
+                        </header>
+
+                        <div class="stamp-body">
+                            <!-- スタンプカードUI -->
+                            <section class="stamp-card">
+                                <h3 class="stamp-card__title">ゆうま、パパ、あしゃでがんばってできました！</h3>
+
+                                <div class="stamp-grid">
+                                    <!-- 10マス -->
+                                    <div class="stamp is-filled">🌸</div>
+                                    <div class="stamp is-filled">🌸</div>
+                                    <div class="stamp">○</div>
+                                    <div class="stamp">○</div>
+                                    <div class="stamp">○</div>
+
+                                    <div class="stamp">○</div>
+                                    <div class="stamp">○</div>
+                                    <div class="stamp">○</div>
+                                    <div class="stamp">○</div>
+                                    <div class="stamp">○</div>
+                                </div>
+
+                                <button class="stamp-action-btn">スタンプをおす</button>
+                            </section>
+                        </div>
+                    </section>
+                </div>
             </section>
+
+
 
         </main>
 
     </div>
 
+    <!-- jQuery（ゆうまページ専用） -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+
     <!-- 共通JS -->
     <script type="module" src="/src/assets/scripts/yuuma.js"></script>
-
+    <!-- 花丸達成オーバーレイ -->
+    <div id="hanamaru-overlay" class="hanamaru is-hidden">
+        <div class="hanamaru__content">
+            <div class="hanamaru__mark">🌸</div>
+            <p class="hanamaru__text">10こ たまったよ！<br>すごい！！</p>
+            <button class="hanamaru__btn">OK</button>
+        </div>
+    </div>
 </body>
 
 </html>

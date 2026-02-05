@@ -25,7 +25,8 @@ export function initSoChecklist() {
         { id: 'name_tag', label: '名札' },
         { id: 'armband', label: '腕章' },
         { id: 'license', label: '免許' },
-        { id: 'wifi', label: 'wi-fi' }
+        { id: 'wifi', label: 'wi-fi' },
+        { id: 'key', label: '鍵' }
     ];
 
     const TOOLS = [
@@ -103,5 +104,5 @@ export function initSoChecklist() {
             localStorage.setItem(DATE_KEY, todayStr);
         }
     }
-    
+
 }
