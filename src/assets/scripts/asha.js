@@ -3,6 +3,7 @@ import { initHousework } from './ui/housework.js';
 import { initExtraTaskManager } from './common/extraTaskManager.js';
 import { initNav } from './ui/nav.js';
 import recipes from '../data/recipes.json';
+import { initDrinkMeter } from './ui/drinkMeter.js';
 
 const RECIPES = recipes;
 /* =========================
@@ -217,5 +218,11 @@ document.addEventListener('DOMContentLoaded', () => {
     backButton.addEventListener('click', () => {
         recipeDetail.classList.add('is-hidden');
         recipeList.classList.remove('is-hidden');
+    });
+
+    initDrinkMeter({
+        root: document.querySelector(".drink-meter"),
+        max: 5,
+        storageKey: "whisky"
     });
 });

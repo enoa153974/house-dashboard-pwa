@@ -171,32 +171,66 @@
 
             <div>
 
-                <!-- あしゃの伝言 -->
-                <section class="card message bg-white">
-                    <h2 class="card-title u-heading-line inline-block pr-8">
-                        <i class="fa-solid fa-comment-dots"></i>
-                        メモ
-                    </h2>
+                <div class="l-row l-row--gap sm:mt-10">
+                    <!-- あしゃの伝言 -->
+                    <section class="card message bg-white l-column l-column--3">
+                        <h2 class="card-title u-heading-line inline-block pr-8">
+                            <i class="fa-solid fa-comment-dots"></i>
+                            メモ
+                        </h2>
 
-                    <!-- 伝言リスト -->
-                    <ul class="message__list flex flex-col pt-4 px-4" id="asha-extra-task-list">
-                        <!-- JSで追加される -->
-                    </ul>
+                        <!-- 伝言リスト -->
+                        <ul class="message__list flex flex-col pt-4 px-4" id="asha-extra-task-list">
+                            <!-- JSで追加される -->
+                        </ul>
 
-                    <!-- 入力欄（あしゃ用） -->
-                    <form class="message__form px-4 sm:px-0" id="asha-extra-task-form">
-                        <input type="text" id="asha-extra-task-input" placeholder="メモを入力してね" autocomplete="off" />
-                        <button type="submit" class="btn btn--add">
-                            <i class="fa-solid fa-plus"></i>
-                        </button>
-                        <!-- 全リセット -->
-                        <button type="button" id="asha-extra-task-reset" class="btn btn--reset">
-                            <i class="fa-solid fa-rotate-left"></i>
-                        </button>
-                    </form>
+                        <!-- 入力欄（あしゃ用） -->
+                        <form class="message__form px-4 sm:px-0" id="asha-extra-task-form">
+                            <input type="text" id="asha-extra-task-input" placeholder="メモを入力してね" autocomplete="off" />
+                            <button type="submit" class="btn btn--add">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                            <!-- 全リセット -->
+                            <button type="button" id="asha-extra-task-reset" class="btn btn--reset">
+                                <i class="fa-solid fa-rotate-left"></i>
+                            </button>
+                        </form>
 
 
-                </section>
+                    </section>
+
+                    <!-- ドリンクメーターUI -->
+                    <div class=" l-column l-column--3">
+                        <h2 class="card-title u-heading-line inline-block pr-8">
+                            <i class="fa-solid fa-whiskey-glass"></i>
+                            Drink meter
+                        </h2>
+                        <div class="drink-meter mt-8 flex sm:flex-col">
+                            <div class="cup">
+                                <div class="ice"></div>
+                                <div class="scale"></div>
+                                <div class="liquid"></div>
+                                <p class="drink-msg"></p>
+                            </div>
+
+                            <div class="flex flex-col pl-4 sm:pl-0 sm:flex-row sm:justify-center sm:py-4">
+                                <button class="drink-btn btn btn--primary bg-sub mb-4 sm:mb-0 sm:mr-4">push</button>
+                                <button class="drink-reset btn btn--primary bg-sub ">reset</button>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div clasS="l-column l-column--3 sm:hidden">
+                        <!-- レイアウト用空白セクション -->
+                    </div>
+
+                    <div clasS="l-column l-column--3 sm:hidden">
+                        <!-- レイアウト用空白セクション -->
+
+                    </div>
+                </div>
             </div>
         </main>
         <!-- ページ固有js -->
