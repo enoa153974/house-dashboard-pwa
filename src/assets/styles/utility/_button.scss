@@ -114,3 +114,35 @@
     max-width: 100%;
     display: block;
 }
+
+
+// ------------------------------
+// ◆ ブロック風ボタン
+// ------------------------------
+.btn-square-above-look {
+    display: inline-block;
+    position: relative;
+    padding: .35em 1em;
+    background: #668ad8;
+    color: #fff;
+}
+
+.btn-square-above-look:before {
+    content: "";
+    position: absolute;
+    top: -16px;
+    left: 0;
+    right: 0;
+    height: 0;
+    border: 8px solid transparent;
+    border-bottom-color: #8eacec;
+}
+
+.btn-square-above-look:active {
+    transform: translateY(-2px);
+}
+
+.btn-square-above-look:active:before {
+    top: -12px;
+    border-width: 6px;
+}
