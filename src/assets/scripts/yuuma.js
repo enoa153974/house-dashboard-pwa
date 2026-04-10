@@ -2,6 +2,9 @@ import { initYuumaSchedule } from './ui/yuumaSchedule.js';
 import { initExtraTasks } from './ui/extraTasks.js';
 import { stampPanel } from './ui/stampPanel.js';
 import { initYuumaStamp } from './ui/yuumaStamp.js';
+import { initHomeworkModal } from "./ui/homeworkCheckModal.js";
+import { initOverlay } from "./ui/overlay.js";
+
 import '../styles/style.scss';
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -13,4 +16,12 @@ window.addEventListener('DOMContentLoaded', () => {
         stampPanel();
     }
     initYuumaStamp();
+
+    //共通overlayの初期化
+    initOverlay();
+    //モーダルの処理
+    const openBtn = document.getElementById("openBtn");
+    if (openBtn) {
+        openBtn.onclick = initHomeworkModal;
+    }
 });

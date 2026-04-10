@@ -172,3 +172,10 @@
     border-top-right-radius: 4px;
     border-bottom-right-radius: 4px;
 }
+
+//蛍光ペン風下線
+.marker-yellow {
+    display: inline;
+    padding: 0 .15em;
+    background: linear-gradient(transparent 55%, rgba(255, 235, 59, .85) 55%);
+}

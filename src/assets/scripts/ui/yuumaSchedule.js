@@ -45,99 +45,99 @@ export function initYuumaSchedule() {
     const WEEKLY_DATA = {
         mon: {
             schedule: ['🏫 がっこう'],
-            belongings: ['👕体そう服', '👟上ぐつ', '👚エプロン', '🥤 すいとう', '🖊 ふでばこ', '📝 連絡袋'],
+            belongings: ['👕体そう服', '👟上ぐつ', '👚エプロン', '🥤 水筒', '🖊 ふでばこ', '📝 連絡袋'],
             tasks: [
                 { id: 'bag', icon: '🎒', label: 'ランドセルを部屋におく' },
-                { id: 'wash', icon: '🧼', label: 'すいとうをだす' },
-                { id: 'homework', icon: '📒', label: 'しゅくだい' },
+                { id: 'wash', icon: '🧼', label: '水筒をだす' },
+                { id: 'homework', icon: '📒', label: '宿題' },
                 { id: 'play', icon: '🎮', label: 'あそんでいいよ' },
-                { id: 'dinner', icon: '🍽', label: 'ばんごはん' },
+                { id: 'dinner', icon: '🍽', label: '晩ご飯' },
                 { id: 'bath', icon: '🛁', label: 'おふろ' },
                 { id: 'teeth', icon: '🪥', label: 'はみがき' },
                 { id: 'water_toilet', icon: '🚰🚽', label: 'お水を飲む＆トイレ' },
-                { id: 'switch_phone', icon: '📱', label: 'スマホとswitchお片付け' }
+                { id: 'switch_phone', icon: '📱', label: 'スマホとswitchお片付け（充電）' }
             ]
         },
         tue: {
             schedule: ['🏫 がっこう', '🏠チャイルドハート'],
-            belongings: ['🥤 すいとう', '🖊 ふでばこ', '📝 連絡袋'],
+            belongings: ['🥤 水筒', '🖊 ふでばこ', '📝 連絡袋'],
             tasks: [
                 { id: 'bag', icon: '🎒', label: 'ランドセルを部屋におく' },
-                { id: 'wash', icon: '🧼', label: 'すいとうをだす' },
-                { id: 'homework', icon: '📒', label: 'しゅくだい' },
+                { id: 'wash', icon: '🧼', label: '水筒をだす' },
+                { id: 'homework', icon: '📒', label: '宿題' },
                 { id: 'play', icon: '🎮', label: 'あそんでいいよ' },
-                { id: 'dinner', icon: '🍽', label: 'ばんごはん' },
+                { id: 'dinner', icon: '🍽', label: '晩ご飯' },
                 { id: 'bath', icon: '🛁', label: 'おふろ' },
                 { id: 'teeth', icon: '🪥', label: 'はみがき' },
                 { id: 'water_toilet', icon: '🚰🚽', label: 'お水を飲む＆トイレ' },
-                { id: 'switch_phone', icon: '📱', label: 'スマホとswitchお片付け' }
+                { id: 'switch_phone', icon: '📱', label: 'スマホとswitchお片付け（充電）' }
 
             ]
         },
         wed: {
             schedule: ['🏫 がっこう'],
-            belongings: ['🥤 すいとう', '🖊 ふでばこ', '📝 連絡袋'],
+            belongings: ['🥤 水筒', '🖊 ふでばこ', '📝 連絡袋'],
             tasks: [
                 { id: 'bag', icon: '🎒', label: 'ランドセルを部屋におく' },
-                { id: 'wash', icon: '🧼', label: 'すいとうをだす' },
-                { id: 'homework', icon: '📒', label: 'しゅくだい' },
+                { id: 'wash', icon: '🧼', label: '水筒をだす' },
+                { id: 'homework', icon: '📒', label: '宿題' },
                 { id: 'play', icon: '🎮', label: 'あそんでいいよ' },
-                { id: 'dinner', icon: '🍽', label: 'ばんごはん' },
+                { id: 'dinner', icon: '🍽', label: '晩ご飯' },
                 { id: 'bath', icon: '🛁', label: 'おふろ' },
                 { id: 'teeth', icon: '🪥', label: 'はみがき' },
                 { id: 'water_toilet', icon: '🚰🚽', label: 'お水を飲む＆トイレ' },
-                { id: 'switch_phone', icon: '📱', label: 'スマホとswitchお片付け' }
+                { id: 'switch_phone', icon: '📱', label: 'スマホとswitchお片付け（充電）' }
 
             ]
         },
         thu: {
             schedule: ['🏫 がっこう'],
-            belongings: ['🥤 すいとう', '🖊 ふでばこ', '📝 連絡袋'],
+            belongings: ['🥤 水筒', '🖊 ふでばこ', '📝 連絡袋'],
             tasks: [
                 { id: 'bag', icon: '🎒', label: 'ランドセルを部屋におく' },
-                { id: 'wash', icon: '🧼', label: 'すいとうをだす' },
-                { id: 'homework', icon: '📒', label: 'しゅくだい' },
+                { id: 'wash', icon: '🧼', label: '水筒をだす' },
+                { id: 'homework', icon: '📒', label: '宿題' },
                 { id: 'play', icon: '🎮', label: 'あそんでいいよ' },
-                { id: 'dinner', icon: '🍽', label: 'ばんごはん' },
+                { id: 'dinner', icon: '🍽', label: '晩ご飯' },
                 { id: 'bath', icon: '🛁', label: 'おふろ' },
                 { id: 'teeth', icon: '🪥', label: 'はみがき' },
                 { id: 'water_toilet', icon: '🚰🚽', label: 'お水を飲む＆トイレ' },
-                { id: 'switch_phone', icon: '📱', label: 'スマホとswitchお片付け' }
+                { id: 'switch_phone', icon: '📱', label: 'スマホとswitchお片付け（充電）' }
 
             ]
         },
         fri: {
             schedule: ['🏫 がっこう', '🏠チャイルドハート'],
-            belongings: ['🥤 すいとう', '🖊 ふでばこ', '📝 連絡袋'],
+            belongings: ['🥤 水筒', '🖊 ふでばこ', '📝 連絡袋'],
             tasks: [
                 { id: 'bag', icon: '🎒', label: 'ランドセルを部屋におく' },
-                { id: 'wash1', icon: '🧼', label: 'すいとうをだす' },
+                { id: 'wash1', icon: '🧼', label: '水筒をだす' },
                 { id: 'wash2', icon: '🧼', label: '体そう服、エプロン、上ぐつを洗たくものにだす' },
-                { id: 'homework', icon: '📒', label: 'しゅくだい' },
+                { id: 'homework', icon: '📒', label: '宿題' },
                 { id: 'play', icon: '🎮', label: 'あそんでいいよ' },
-                { id: 'dinner', icon: '🍽', label: 'ばんごはん' },
+                { id: 'dinner', icon: '🍽', label: '晩ご飯' },
                 { id: 'bath', icon: '🛁', label: 'おふろ' },
                 { id: 'teeth', icon: '🪥', label: 'はみがき' },
                 { id: 'water_toilet', icon: '🚰🚽', label: 'お水を飲む＆トイレ' },
-                { id: 'switch_phone', icon: '📱', label: 'スマホとswitchお片付け' }
+                { id: 'switch_phone', icon: '📱', label: 'スマホとswitchお片付け（充電）' }
 
             ]
         },
         sat: {
             schedule: ['🏠チャイルドハート'],
-            belongings: ['🥤 すいとう', '🍱お弁当', '👜お着換え袋'],
+            belongings: ['🥤 水筒', '🍱お弁当', '👜お着換え袋'],
             tasks: [
                 { id: 'bag', icon: '🎒', label: 'リュックを部屋におく' },
                 { id: 'wash1', icon: '🧼', label: '🍱お弁当をだす' },
-                { id: 'wash2', icon: '🧼', label: 'すいとうをだす' },
-                { id: 'homework', icon: '📒', label: 'しゅくだい（まだなら）' },
+                { id: 'wash2', icon: '🧼', label: '水筒をだす' },
+                { id: 'homework', icon: '📒', label: '宿題（まだなら）' },
                 { id: 'wash3', icon: '🧼', label: '上ぐつを洗う' },
                 { id: 'play', icon: '🎮', label: 'あそんでいいよ' },
-                { id: 'dinner', icon: '🍽', label: 'ばんごはん' },
+                { id: 'dinner', icon: '🍽', label: '晩ご飯' },
                 { id: 'bath', icon: '🛁', label: 'おふろ' },
                 { id: 'teeth', icon: '🪥', label: 'はみがき' },
                 { id: 'water_toilet', icon: '🚰🚽', label: 'お水を飲む＆トイレ' },
-                { id: 'switch_phone', icon: '📱', label: 'スマホとswitchお片付け' }
+                { id: 'switch_phone', icon: '📱', label: 'スマホとswitchお片付け（充電）' }
             ]
         },
         sun: {
@@ -146,11 +146,11 @@ export function initYuumaSchedule() {
             tasks: [
                 { id: 'rest', icon: '🌤', label: 'ゆっくりすごす' },
                 { id: 'play', icon: '🎮', label: 'あそんでいいよ' },
-                { id: 'dinner', icon: '🍽', label: 'ばんごはん' },
+                { id: 'dinner', icon: '🍽', label: '晩ご飯' },
                 { id: 'bath', icon: '🛁', label: 'おふろ' },
                 { id: 'teeth', icon: '🪥', label: 'はみがき' },
                 { id: 'water_toilet', icon: '🚰🚽', label: 'お水を飲む＆トイレ' },
-                { id: 'switch_phone', icon: '📱', label: 'スマホとswitchお片付け' }
+                { id: 'switch_phone', icon: '📱', label: 'スマホとswitchお片付け（充電）' }
 
             ]
         }

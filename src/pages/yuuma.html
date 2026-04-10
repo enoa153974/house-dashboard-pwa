@@ -80,6 +80,7 @@
         -->
                 </ul>
 
+
                 <h3 class="card-subtitle">
                     <i class="fa-solid fa-backpack"></i>
                     もちもの
@@ -88,6 +89,29 @@
                 <ul class="belongings__list" id="belongings-list">
                     <!-- JSで曜日ごとに差し替え -->
                 </ul>
+
+
+                <!-- 宿題チェック -->
+                <button id="openBtn" class="btn-square-above-look mt-20">宿題チェック</button>
+                <template id="homework-check-modal">
+                    <div class="modal homework-check-modal">
+                        <h2 class="homework-check-modal__title u-heading-line">宿題チェックリスト</h2>
+                        <p class="homework-check-modal__desc py-2">下の順番で宿題をかんぺきにしよう！</p>
+                        <ul class="homework-check-modal__list py-4">
+                            <li class="list__item py-2">① 連絡帳をみて今日の宿題をかくにんしよう</li>
+                            <li class="list__item py-2">② 今日の宿題はなにかな？あしゃかパパにおしらせしよう！</li>
+                            <li class="list__item py-2">③ 宿題スタート！全部やりきろう！</li>
+                            <li class="list__item py-2">④ 全部おわったらあしゃかパパにおしらせしよう！</li>
+                            <li class="list__item py-2 list__item--long">
+                                ⑤ あしゃかパパに<span class="ok-text font-bold font-en">「OK」</span>をもらったら、やること”宿題”に花丸<span
+                                    class="hanamaru"></span>をつけよう
+                            </li>
+                        </ul>
+                        <div class="py-2 flex justify-end ">
+                            <p class="homework-check-modal__text marker-yellow">①～⑤までできたかな？？？</p>
+                        </div>
+                    </div>
+                </template>
             </section>
 
             <!-- 帰宅後のやること -->
@@ -188,11 +212,20 @@
     <!-- 花丸達成オーバーレイ -->
     <div id="hanamaru-overlay" class="hanamaru-overlay  is-hidden">
         <div class="hanamaru__content">
-            <img src="/images/stamp_full.png" alt="" class="hanamaru__mark img-wrapper img-wrapper-1-1"/>
+            <img src="/images/stamp_full.png" alt="" class="hanamaru__mark img-wrapper img-wrapper-1-1" />
             <p class="hanamaru__text">10こ たまったよ！<br>すごいね！！</p>
             <button class="hanamaru__btn">OK</button>
         </div>
     </div>
+
+    <!-- 共通Overlay（ページ最下部に置く） -->
+    <div id="overlay" class="overlay" aria-hidden="true">
+        <div class="modal">
+            <button id="closeModal" type="button" class="close-modal"><i class="fa-solid fa-xmark"></i></button>
+            <div id="overlayContent" class="overlay-content"></div>
+        </div>
+    </div>
+
 </body>
 
 </html>
