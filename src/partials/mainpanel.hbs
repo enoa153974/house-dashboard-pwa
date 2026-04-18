@@ -8,9 +8,12 @@
 
             <section class="weather-panel card jp l-column l-column--4 rounded-lg bg-accent py-10 px-6 sm:py-4 sm:px-6">
                 <div class="weather-panel__inner">
-                    <p>今日は</p>
+                    <p class="weather__label">今日は</p>
                     <p id="weather-status" class="weater-status">天気取得中…</p>
-                    <p id="weather-temp"></p>
+                    <p id="weather-temp">温度</p>
+                    <p id="weather-advice" class="weather__advice">
+                        長袖がちょうどいい 👍
+                    </p>
                     <button id="weather-refresh"
                         class="weather-refresh__btn flex justify-end mt-8 rounded-lg">更新</button>
                 </div>
@@ -32,8 +35,10 @@
                             placeholder="家族に伝えたいことを入力してね"></textarea>
 
                         <div class="memo__actions">
-                            <button type="submit" class="memo__save py-4 px-4 rounded"><i class="fa-solid fa-check"></i></button>
-                            <button type="button" id="memo-clear" class="memo__clear py-4 px-4 rounded"><i class="fa-solid fa-trash"></i></button>
+                            <button type="submit" class="memo__save py-4 px-4 rounded"><i
+                                    class="fa-solid fa-check"></i></button>
+                            <button type="button" id="memo-clear" class="memo__clear py-4 px-4 rounded"><i
+                                    class="fa-solid fa-trash"></i></button>
                         </div>
                     </form>
 
