@@ -41,18 +41,133 @@
     }
 
 
-    /* 天気パネル */
-    .weather-panel__inner {
-        font-size: var(--font-size-2xl);
+    // ------------------------------
+    // ◆ 天気予報セクション
+    // ------------------------------
+
+    /* 天気パネルの中身 */
+    .weather-panel {
+        position: relative;
+        overflow: hidden;
+        isolation: isolate;
+        z-index: 0;
+
+
+        .weather-panel__inner {
+            .weather__label {
+                font-size: var(--font-size-lg);
+                color: #666;
+            }
+
+            .weather__status {
+                font-size: var(--font-size-2xl);
+            }
+
+            .weather__temp {
+                font-size: var(--font-size-4xl);
+                font-weight: bold;
+                margin: 1rem 0;
+                text-align: center;
+            }
+
+            .weather__advice {
+                font-size: var(--font-size-lg);
+                margin-top: 1rem;
+                color: #444;
+                text-align: right;
+            }
+
+        }
+
     }
 
-    .weather-panel button {
-        margin-left: auto;
-        border: none;
-        background: #333;
-        color: #fff;
+    //天気パネルに背景柄を天気によって重ねる
+    .weather-panel::before,
+    .weather-panel::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        z-index: -1;
     }
 
+    // ------------------------------
+    // ◆ 天気パネルの背景柄（天気によって分岐）
+    // ------------------------------
+    //晴れの日
+    .weather-panel.weather--clear {
+        background:
+            radial-gradient(circle at top right, rgb(255 244 180 / 70%) 0%, rgb(255 244 180 / 0%) 35%),
+            linear-gradient(180deg, #fff9e8 0%, #f7f2e8 100%);
+    }
+
+    .weather-panel.weather--clear::before {
+        background:
+            radial-gradient(circle at 85% 18%, rgb(255 255 255 / 45%) 0 4rem, transparent 4.2rem),
+            radial-gradient(circle at 78% 12%, rgb(255 240 170 / 50%) 0 6rem, transparent 6.2rem);
+    }
+
+    //曇りの日
+    .weather-panel.weather--clouds {
+        background:
+            linear-gradient(180deg, #eef3f7 0%, #e2e7ec 100%);
+    }
+
+    .weather-panel.weather--clouds::before {
+        background:
+            radial-gradient(circle at 20% 30%, rgb(255 255 255 / 70%) 0 3rem, transparent 3.2rem),
+            radial-gradient(circle at 60% 40%, rgb(255 255 255 / 60%) 0 3.5rem, transparent 3.7rem),
+            radial-gradient(circle at 50% 28%, rgb(255 255 255 / 50%) 0 5rem, transparent 3rem),
+            radial-gradient(circle at 70% 20%, rgb(255 255 255 / 45%) 0 4rem, transparent 4.2rem);
+
+        filter: blur(4px);
+    }
+
+    .weather-panel.weather--clouds::after {
+        background:
+            radial-gradient(circle at 60% 40%, rgb(255 255 255 / 30%) 0 6rem, transparent 6.2rem),
+            radial-gradient(circle at 30% 50%, rgb(255 255 255 / 25%) 0 5rem, transparent 5.2rem);
+
+        filter: blur(12px);
+    }
+
+    //雨の日
+    .weather-panel.weather--rain {
+        background:
+            linear-gradient(180deg, #dfe8f1 0%, #eef2f5 100%);
+    }
+
+    .weather-panel.weather--rain::before {
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 45%;
+        background:
+            radial-gradient(circle, rgb(255 255 255 / 45%) 0 .35rem, transparent .36rem);
+        background-size: 1.5rem 1.5rem;
+        opacity: .7;
+    }
+
+    //雪の日
+    .weather-panel.weather--snow {
+        background:
+            linear-gradient(180deg, #eef6fb 0%, #f8fbfd 100%);
+    }
+
+    .weather-panel.weather--snow::before {
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 60%;
+
+        background:
+            radial-gradient(circle, rgb(255 255 255 / 90%) 0 .3rem, transparent .32rem);
+
+        background-size: 2rem 2rem;
+        opacity: .8;
+    }
+
+    //天気パネルの更新ボタン
     .weather-refresh__btn {
         background: #888;
         color: #fff;
@@ -62,11 +177,16 @@
         box-shadow: 0 .1rem .2rem rgba(0, 0, 0, .25);
     }
 
+    //天気パネルの更新ボタン（押下時）
     .weather-refresh__btn:active {
         transform: translateY(1px);
         box-shadow: 0 .05rem .1rem rgba(0, 0, 0, .2);
     }
 
+
+    // ------------------------------
+    // ◆ メモ・お知らせセクション
+    // ------------------------------
 
     .home-info {
         border: solid var(--sub-color);
@@ -83,6 +203,7 @@
 
         .garbage__comment {
             font-size: var(--font-size-2xl);
+            white-space: pre-line;
         }
 
         .memo {

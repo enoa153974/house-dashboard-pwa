@@ -5,25 +5,64 @@
  */
 
 export function initGarbage() {
+    updateGarbage();
+    scheduleMidnightUpdate();
+}
+
+//更新ロジック
+function updateGarbage() {
     const commentEl = document.getElementById('garbage-comment');
     if (!commentEl) return;
 
-    // 曜日ごとのゴミ設定（必要に応じて変える）
     const GARBAGE_SCHEDULE = {
-        1: 'ごみ',   // 月
-        2: 'ビン・カン・段ボール', // 火
-        4: 'ごみ',   // 木
-        5: 'プラ',   // 金
+        1: 'ごみ',
+        2: 'ビン・カン・段ボール',
+        4: 'ごみ',
+        5: 'プラ',
     };
 
-    const today = new Date();
-    const day = today.getDay(); // 0=日, 1=月, ...
+    const now = new Date();
+    const day = now.getDay();
 
-    const garbageType = GARBAGE_SCHEDULE[day];
+    const todayGarbage = GARBAGE_SCHEDULE[day];
 
-    if (garbageType) {
-        commentEl.textContent = `今日は「${garbageType}」の日です！`;
+    // 👇 明日
+    const tomorrow = (day + 1) % 7;
+    const tomorrowGarbage = GARBAGE_SCHEDULE[tomorrow];
+
+    // -------------------------
+    // 表示
+    // -------------------------
+
+    let text = '';
+
+    // 今日
+    if (todayGarbage) {
+        text += `今日は「${todayGarbage}」の日です！`;
     } else {
-        commentEl.textContent = '今日はゴミの日ではありません';
+        text += '今日はゴミの日ではありません';
     }
+
+    if (tomorrowGarbage) {
+        text += `\n明日は「${tomorrowGarbage}」の日です`;
+    }
+    commentEl.textContent = text;
+}
+
+
+//0時更新ロジック
+function scheduleMidnightUpdate() {
+    const now = new Date();
+
+    const nextMidnight = new Date();
+    nextMidnight.setHours(24, 0, 0, 0);
+
+    const msUntilMidnight = nextMidnight - now;
+
+    setTimeout(() => {
+        updateGarbage();
+
+        // 次の日以降は24時間ごと
+        setInterval(updateGarbage, 24 * 60 * 60 * 1000);
+    }, msUntilMidnight);
 }

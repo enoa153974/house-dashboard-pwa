@@ -1,4 +1,4 @@
-<div class="main-panel l-inner bg-color pt-8 px-4 sm:py-6">
+<div class="main-panel l-inner pt-8 px-4 sm:py-6">
     <div class="flex flex-col sm:flex-col">
         <div class="l-row l-row--gap">
             <section class="clock-area l-column l-column--8 font-bold">
@@ -6,16 +6,22 @@
                 <div id="date" class="date en font-semibold px-12 text-center">---- --/--</div>
             </section>
 
-            <section class="weather-panel card jp l-column l-column--4 rounded-lg bg-accent py-10 px-6 sm:py-4 sm:px-6">
+            <section id="weather-panel"
+                class="weather-panel weather--clear card jp l-column l-column--4 rounded-lg py-10 px-6 sm:py-4 sm:px-6">
                 <div class="weather-panel__inner">
-                    <p class="weather__label">今日は</p>
-                    <p id="weather-status" class="weater-status">天気取得中…</p>
-                    <p id="weather-temp">温度</p>
+                    <div class="flex justify-between items-center">
+                        <p class="weather__label">今日は</p>
+                        <div class="flex justify-end">
+                            <button id="weather-refresh" class="weather-refresh__btn rounded-lg">更新</button>
+                        </div>
+                    </div>
+
+                    <p id="weather-status" class="weather__status">天気取得中…</p>
+                    <p id="weather-temp" class="weather__temp ">温度</p>
                     <p id="weather-advice" class="weather__advice">
                         長袖がちょうどいい 👍
                     </p>
-                    <button id="weather-refresh"
-                        class="weather-refresh__btn flex justify-end mt-8 rounded-lg">更新</button>
+
                 </div>
             </section>
         </div>
