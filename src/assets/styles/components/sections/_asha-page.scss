@@ -416,4 +416,10 @@
         }
     }
 
+        .l-column--9 {
+        @include media-query(md) {
+            width: 100%;
+        }
+    }
+
 }
